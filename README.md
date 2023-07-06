@@ -46,7 +46,7 @@ img 태그 안에 src="주소" 에서 주소 부분에 마우스 커서를 갖�
 |  06  | 이병길 | [비로가기][LeeBG] |
 |  07  | 조민병 | [바로가기][JMB]   |
 |  08  | 이현우 | [바로가기][LHW]   |
-|  09  | 임상욱 | [바로가기][ISW]   |
+|  09  | 임상욱 | [바로가기][LHW]   |
 
 
 [sunro]: https://github.com/Employment-Study/HTML-CSS-Javascript_STUDY/tree/Sunro
