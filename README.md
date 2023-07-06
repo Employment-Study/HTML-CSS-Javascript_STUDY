@@ -56,7 +56,7 @@ img 태그 안에 src="주소" 에서 주소 부분에 마우스 커서를 갖�
 [Soeun]: https://github.com/Employment-Study/HTML-CSS-Javascript_STUDY/tree/Soeun
 [AhnJiHye]: https://github.com/Employment-Study/HTML-CSS-Javascript_STUDY/tree/AhnJiHye
 [JMB]: https://github.com/Employment-Study/HTML-CSS-Javascript_STUDY/tree/JMB
-[ISW]: https://github.com/Employment-Study/HTML-CSS-Javascript_STUDY/tree/ISW
+[LSW]: https://github.com/Employment-Study/HTML-CSS-Javascript_STUDY/tree/ISW
 [LHW]: https://github.com/Employment-Study/HTML-CSS-Javascript_STUDY/tree/LHW
 
 
