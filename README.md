@@ -1,6 +1,6 @@
 # HTML-CSS-Javascript를 공부하기 위한 레포지토리 입니다.
 
-## 환경
+## 개발 환경(IDE)
 - Visual Studio Code
 
 ## 추천 Extensions(VS Code 확장 프로그램)
