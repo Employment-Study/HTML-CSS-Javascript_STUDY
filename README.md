@@ -1,9 +1,11 @@
-# HTML-CSS-Javascript를 공부하기 위한 레포지토리 입니다.
+## ✈️ 소개
+- ### HTML,CSS,Javascript를 공부하기 위한 레포지토리 입니다.
 
-## 개발 환경(IDE)
-- Visual Studio Code
+## 🛠개발 환경(IDE)
 
-## 추천 Extensions(VS Code 확장 프로그램)
+[![](https://img.shields.io/badge/visual_studio_code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://code.visualstudio.com/download)
+
+## 📌 추천 Extensions(VS Code 확장 프로그램)
 <details>
   <summary>목록 펴기 / 접기</summary>
   
@@ -34,7 +36,7 @@ img 태그 안에 src="주소" 에서 주소 부분에 마우스 커서를 갖�
   
 </details>
 
-## 브랜치 바로가기
+## 🔗 브랜치 바로가기
 
 | 번호 |  멤버  |   바로가기      | 
 | :--: | :--------: | :---------------: |
@@ -46,7 +48,16 @@ img 태그 안에 src="주소" 에서 주소 부분에 마우스 커서를 갖�
 |  06  | 이병길 | [비로가기][LeeBG] |
 |  07  | 조민병 | [바로가기][JMB]   |
 |  08  | 이현우 | [바로가기][LHW]   |
-|  09  | 임상욱 | [바로가기][ISW]   |
+|  09  | 임상욱 | [바로가기][LHW]   |
+
+## ⚙️그 외 설정
+- ### [파일] - [기본설정] - [설정] - 'zoom' - Mouse wheel zoom 에 체크
+  ![Screenshot_7](https://github.com/Employment-Study/HTML-CSS-Javascript_STUDY/assets/44068819/bb97b85c-874d-47e9-99f5-20908e19e8da)
+  
+<br/>
+
+- ### Files Associations *.html파일 설정
+  ![Screenshot_6](https://github.com/Employment-Study/HTML-CSS-Javascript_STUDY/assets/44068819/3774eab7-09fc-4910-b236-d9674affa423)
 
 
 [sunro]: https://github.com/Employment-Study/HTML-CSS-Javascript_STUDY/tree/Sunro
@@ -56,15 +67,5 @@ img 태그 안에 src="주소" 에서 주소 부분에 마우스 커서를 갖�
 [Soeun]: https://github.com/Employment-Study/HTML-CSS-Javascript_STUDY/tree/Soeun
 [AhnJiHye]: https://github.com/Employment-Study/HTML-CSS-Javascript_STUDY/tree/AhnJiHye
 [JMB]: https://github.com/Employment-Study/HTML-CSS-Javascript_STUDY/tree/JMB
-[ISW]: https://github.com/Employment-Study/HTML-CSS-Javascript_STUDY/tree/ISW
+[LSW]: https://github.com/Employment-Study/HTML-CSS-Javascript_STUDY/tree/ISW
 [LHW]: https://github.com/Employment-Study/HTML-CSS-Javascript_STUDY/tree/LHW
-
-
-## 그 외 설정
-- [파일] - [기본설정] - [설정] - 'zoom' - Mouse wheel zoom 에 체크
-  ![Screenshot_7](https://github.com/Employment-Study/HTML-CSS-Javascript_STUDY/assets/44068819/bb97b85c-874d-47e9-99f5-20908e19e8da)
-  
-<br/>
-
-- Files Associations *.html파일 설정
-![Screenshot_6](https://github.com/Employment-Study/HTML-CSS-Javascript_STUDY/assets/44068819/3774eab7-09fc-4910-b236-d9674affa423)
