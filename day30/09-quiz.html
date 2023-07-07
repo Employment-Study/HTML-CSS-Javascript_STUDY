@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09-quiz2.html</title>
+    <style>
+        .test {
+            width: 1200px;
+            margin: auto;
+            border: 1px solid lightgrey;
+        }
+
+        .header {
+            background-color: grey;
+            height: 150px;
+            padding-top: 100px;
+        }
+
+        .header>div {
+            font-size: 30px;
+            margin: auto;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            background-color: blue;
+            color: white;
+            padding: 5px;
+        }
+
+        .main {
+            background-color: white;
+            display: flex;
+        }
+
+        .menu,
+        .hello {
+            background-color: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-right: 20px;
+        }
+
+        .menu {
+            flex: 2;
+            color: white;
+            background-color: black;
+            height: 400px;
+        }
+
+        .menu>ul {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+
+        .menu>ul>li {
+            padding: 10px;
+        }
+
+        .menu>ul>li:hover {
+            background-color: red;
+            cursor: pointer;
+        }
+
+        .hello {
+            flex: 8;
+            margin-left: 20px;
+        }
+
+        .hello>p {
+            background-color: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .hello>h1 {
+            background-color: white;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer {
+            background-color: white;
+            font-weight: 700;
+            margin: auto;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="test">
+        <div class="header">
+            <div>
+                LOGO
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="menu">
+                <ul>
+                    <li>Menu-1</li>
+                    <li>Menu-2</li>
+                    <li>Menu-3</li>
+                </ul>
+            </div>
+            <div class="hello">
+                <h1>Hello World</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam quae officia voluptatum modi hic.
+                    Commodi
+                    illo, dolores laborum modi perspiciatis voluptatem inventore unde fugiat pariatur quaerat error
+                    delectus
+                    aliquam earum!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem voluptate autem sapiente ad
+                    maiores quae, veritatis vero quam, rem, perferendis aperiam optio iste officiis! Totam consectetur
+                    non
+                    ratione repudiandae doloribus!</p>
+            </div>
+
+        </div>
+        <hr style="width: 90%;">
+        <div class="footer">
+            @copy
+        </div>
+    </div>
+</body>
+
+</html>

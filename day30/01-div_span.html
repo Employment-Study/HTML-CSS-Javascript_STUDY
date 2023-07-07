@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01-div_span.htm</title>
+    <!-- 태그를 지정하는 방법 세 가지 : 태그이름,id(#), class(.),  -->
+    <!-- 이것을 '선택자'라고 한다. -->
+    <style>
+        /*style 태그 안에 적는게 더 많이 쓰인다.*/
+        .item {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>01-div_span.html</h1>
+    <hr />
+
+    <p>div: 화면 영역을 분리하기위한 태그, 혼자서 한 줄을 차지한다.</p>
+    <p>
+        span: 요소를 구분하기 위한 태그, 줄 바꿈이 없고, 내부 컨텐츠만큼 크기를
+        차지한다.
+    </p>
+
+    <div style="background-color: lightpink">1</div>
+    <div style="background-color: lightpink">2</div>
+    <div style="background-color: lightpink">3</div>
+
+    <!-- 스타일을 지정하는 첫번째 방법 : 태그의 속성으로 style을 지정해서 넣어주는 방법(코드가 길어진다.) -->
+    <span style="background-color: lightskyblue">4</span>
+    <span style="background-color: lightskyblue">5</span>
+    <span style="background-color: lightskyblue">6</span>
+
+    <!-- 스타일을 지정하는 두번째 방법 : 선택자로 묶어서 일괄처리 -->
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+</body>
+
+</html>

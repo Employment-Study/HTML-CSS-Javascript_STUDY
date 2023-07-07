@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_layout.html</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #eee;
+        }
+
+        .frame {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        h3 {
+
+            text-align: center;
+            /*모든 제목글 태그에는 margin값이 있는데 이것 때문에 빈공간이 생긴다.*/
+            /*없애준다.*/
+            margin: 0;
+        }
+
+        #header,
+        #footer {
+            height: 150px;
+        }
+
+        #header {
+            background-color: lightcoral;
+        }
+
+        #main {
+            background-color: lightgoldenrodyellow;
+            display: flex;
+            height: 700px;
+        }
+
+        #main>#aside {
+            flex: 2;
+            background-color: lightgreen;
+        }
+
+        #main>#section {
+            flex: 8;
+            background-color: burlywood;
+        }
+
+        #footer {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 큰 제목, 로그인 바와 같은 것을 두는 상단 부분 -->
+    <div id="header" class="frame">
+        <h3>상단</h3>
+    </div>
+
+    <!-- 내용이 되는 중심부 -->
+    <div id="main" class="frame">
+        <div id="aside">
+            <h3>왼쪽 메뉴</h3>
+        </div>
+        <div id="section">
+            <h3>가운데 중심 내용</h3>
+        </div>
+    </div>
+
+    <!-- 사이트나 회사 등의 정보 등을 나타내는 하단 부분 -->
+    <div id="footer" class="frame">
+        <h3>하단</h3>
+    </div>
+</body>
+
+</html>
