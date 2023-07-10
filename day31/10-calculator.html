@@ -7,8 +7,10 @@
         <style>
             #frame {
                 width: 400px;
-                height: 700px;
+                height: 650px;
                 border: 1px solid black;
+                margin: auto;
+                box-shadow: 1px 1px 5px 2px grey;
             }
 
             #header {
@@ -24,7 +26,7 @@
 
             #header_items {
                 display: flex;
-                flex: 2;
+                cursor: pointer;
             }
 
             #header_items > h3 {
@@ -38,6 +40,7 @@
 
             #main_menu {
                 display: flex;
+                cursor: pointer;
             }
 
             #main_menu > h2 {
@@ -47,15 +50,16 @@
 
             #main_history > h2 {
                 margin: 10px;
+                cursor: pointer;
             }
 
             #main_numspace {
                 display: flex;
                 margin-right: 20px;
+                justify-content: flex-end;
             }
 
             #main_numspace {
-                justify-content: flex-end;
             }
 
             #calc > ul {
@@ -63,31 +67,80 @@
                 display: flex;
                 padding-left: 0px;
                 justify-content: space-around;
+                margin: 10px;
             }
 
             ul > li {
+                padding: 10px 20px;
+            }
+
+            h1 {
+                font-size: 50px;
+            }
+
+            td {
+                width: 50px;
+                height: 30px;
+            }
+
+            #numpad {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+
+            #tab {
+                width: 100%;
+                height: 100%;
+            }
+
+            #active:hover {
+                background-color: #ccc;
+            }
+
+            td {
+                font-size: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-shadow: 1px 1px 1px grey;
+                justify-content: center;
+                text-align: center;
+            }
+
+            td:hover {
+                background-color: aliceblue;
+            }
+
+            #equal {
+                background-color: blue;
+                color: white;
+                font-weight: 700;
+            }
+
+            #equal:hover {
+                background-color: cornflowerblue;
             }
         </style>
     </head>
     <body>
         <div id="frame">
             <div id="header">
-                <div id="header_name"><h3>📇계산기</h3></div>
+                <div id="header_name"><h3>🖩계산기</h3></div>
                 <div id="header_items">
                     <h3>─</h3>
                     <h3>□</h3>
-                    <h3>Ⅹ</h3>
+                    <h3>X</h3>
                 </div>
             </div>
 
             <div id="main">
                 <div id="main_menu">
-                    <h2>☰</h2>
+                    <h2 title="탐색 열기">☰</h2>
                     <h2>표준</h2>
-                    <h2>📌</h2>
+                    <h2 title="항상 위에 유지 (Alt+위쪽 화살표)">📌</h2>
                 </div>
                 <div id="main_history">
-                    <h2>⏱</h2>
+                    <h2 title="기록 (Ctrl + H)">⏱</h2>
                 </div>
             </div>
             <div id="main_numspace">
@@ -95,16 +148,54 @@
             </div>
             <div id="calc">
                 <ul>
-                    <li>MC</li>
-                    <li>MR</li>
-                    <li>M+</li>
-                    <li>M-</li>
-                    <li>MS</li>
-                    <li>M∨</li>
+                    <li style="color: darkgrey">MC</li>
+                    <li style="color: darkgrey">MR</li>
+                    <li id="active" title="메모리 값 더하기(Ctrl + P)">M+</li>
+                    <li id="active" title="메모리 값 빼기(Ctrl + Q)">M-</li>
+                    <li id="active" title="메모리 값 저장(Ctrl + M)">MS</li>
+                    <li style="color: darkgrey">M∨</li>
                 </ul>
             </div>
-
-            <table></table>
+            <div id="numpad">
+                <table id="tab" cellspacing="5" cellpadding="10">
+                    <tr>
+                        <td>%</td>
+                        <td>CE</td>
+                        <td>C</td>
+                        <td>⇍</td>
+                    </tr>
+                    <tr>
+                        <td>⅟x</td>
+                        <td>x²</td>
+                        <td>√x</td>
+                        <td>÷</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>×</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>+</td>
+                    </tr>
+                    <tr>
+                        <td>+⁄-</td>
+                        <td>0</td>
+                        <td>.</td>
+                        <td id="equal">=</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </body>
 </html>
