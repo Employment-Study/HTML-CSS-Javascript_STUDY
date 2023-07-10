@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-flex.html</title>
+    <style>
+        #header{
+            /*flex는 자기자신을 정렬하는 것이 아니라 내부를 정렬하는 것이다.*/
+            display: flex;
+            /*내부의 item을 가로 중앙으로*/
+            justify-content: center;
+            border: 1px dashed red;
+        }
+
+        #main {
+            display: flex;
+            border: 1px dashed orange;
+        }
+
+        #nav {
+            flex : 1;
+            border: 2px dashed green;
+        }
+
+        #content {
+            flex:4;
+            border: 1px dashed blue;
+        }
+
+        #nav > ul {
+            width: 200px;
+            height: 300px;
+            list-style: none;
+            display: flex;
+            flex-direction: column; /*기본값은 row(한 열)*/
+            /*column으로 설정하면 flexbox의 중심축이 90도 회전한다.*/
+            justify-content: center;  /*중심축이 돌아갔기 때문에 justify-content는 상하 정렬로 바뀐다.*/
+        }
+
+    </style>
+</head>
+<body>
+    <h1>03-flex.html</h1>
+    <hr>
+
+    <div id="header">
+        <h1>TITLE</h1>
+    </div>
+
+    <div id="main">
+        <div id="nav">
+            <ul>
+                <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
+            </ul>
+        </div>
+        <div id="content">
+            <h3>Hello World</h3>
+        </div>
+    </div>
+</body>
+</html>

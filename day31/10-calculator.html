@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>10-calculator.html</title>
+        <style>
+            #frame {
+                width: 400px;
+                height: 700px;
+                border: 1px solid black;
+            }
+
+            #header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            #header_name {
+                flex: 3;
+                margin-left: 20px;
+            }
+
+            #header_items {
+                display: flex;
+                flex: 2;
+            }
+
+            #header_items > h3 {
+                margin: 10px;
+            }
+
+            #main {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            #main_menu {
+                display: flex;
+            }
+
+            #main_menu > h2 {
+                display: flex;
+                margin: 10px;
+            }
+
+            #main_history > h2 {
+                margin: 10px;
+            }
+
+            #main_numspace {
+                display: flex;
+                margin-right: 20px;
+            }
+
+            #main_numspace {
+                justify-content: flex-end;
+            }
+
+            #calc > ul {
+                list-style: none;
+                display: flex;
+                padding-left: 0px;
+                justify-content: space-around;
+            }
+
+            ul > li {
+            }
+        </style>
+    </head>
+    <body>
+        <div id="frame">
+            <div id="header">
+                <div id="header_name"><h3>📇계산기</h3></div>
+                <div id="header_items">
+                    <h3>─</h3>
+                    <h3>□</h3>
+                    <h3>Ⅹ</h3>
+                </div>
+            </div>
+
+            <div id="main">
+                <div id="main_menu">
+                    <h2>☰</h2>
+                    <h2>표준</h2>
+                    <h2>📌</h2>
+                </div>
+                <div id="main_history">
+                    <h2>⏱</h2>
+                </div>
+            </div>
+            <div id="main_numspace">
+                <h1>0</h1>
+            </div>
+            <div id="calc">
+                <ul>
+                    <li>MC</li>
+                    <li>MR</li>
+                    <li>M+</li>
+                    <li>M-</li>
+                    <li>MS</li>
+                    <li>M∨</li>
+                </ul>
+            </div>
+
+            <table></table>
+        </div>
+    </body>
+</html>

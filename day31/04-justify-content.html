@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04-justify-content.html</title>
+    <style>
+        .box {
+            display: flex;
+            width: 500px;
+            height: 200px;
+            padding: 10px;
+            border: 2px dashed orange;
+            align-items: center;
+        }
+
+        .item {
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+        }
+        .item1{background-image: url('image/철수.png');}
+        .item2{background-image: url('image/훈이.png');}
+        .item3{background-image: url('image/맹구.png');}
+    </style>
+</head>
+<body>
+    <h1>04-justify-content.html</h1>
+    <hr>
+    <!-- 내부 아이템들을 맨 앞으로 당겨옴-->
+    <div class="box" style="justify-content: flex-start;">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+    </div>
+
+    <!-- 내부 아이템들을 중앙으로 위치시킴-->
+    <div class="box" style="justify-content: center;">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+    </div>
+
+    <!-- 내부 아이템들을 끝으로 몰아버림 -->
+    <div class="box" style="justify-content: flex-end;">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+    </div>
+
+    <!-- 서로 간격을 최대한 벌임 -->
+    <div class="box" style="justify-content: space-between">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+    </div>
+
+    <!-- 간격이 일정하게 띄워짐 -->
+    <div class="box" style="justify-content: space-around">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+    </div>
+
+    <!-- 간격을 더 줄임 -->
+    <div class="box" style="justify-content: space-evenly">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+    </div>
+
+    <div class="box" style="justify-content: center; flex-flow: wrap">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+    </div>
+</body>
+</html>
