@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>06-naverlogin.html</title>
+        <style>
+            td {
+                padding: 5px 10px;
+            }
+
+            #method {
+                border-left: 1px solid lightgray;
+                border-radius: 5px;
+            }
+
+            #frame {
+                width: 500px;
+                margin: auto;
+            }
+
+            #loginborder {
+                border: 1px solid lightgray;
+                border-radius: 5px;
+            }
+
+            #header {
+                display: flex;
+                justify-content: flex-end;
+                flex-flow: wrap;
+                margin-bottom: 40px;
+            }
+            select {
+                position: absolute;
+                top: 20px;
+                right: 380px;
+                font-size: 16px;
+                padding: 10px;
+            }
+            #main {
+                width: 100%;
+            }
+
+            #footer {
+                width: 100%;
+                height: 200px;
+            }
+
+            #logo {
+                width: 100%;
+                text-align: center;
+                font-weight: bold;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+                    sans-serif;
+                font-size: 30px;
+            }
+
+            #logintable {
+                border: 1px solid lightgrey;
+                color: black;
+            }
+
+            table {
+                width: 100%;
+                border-radius: 5px;
+            }
+
+            label {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            form {
+                display: flex;
+                flex-flow: wrap;
+            }
+
+            form > input {
+                width: 100%;
+                height: 50px;
+                margin: 10px 20px;
+                border-radius: 5px;
+            }
+
+            label {
+                width: 40%;
+                margin: 10px 20px;
+            }
+
+            #login {
+                margin: 20px;
+                color: white;
+                background-color: #03c75a;
+                border-radius: 5px;
+                border: 1px solid green;
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            th {
+                padding: 10px 20px;
+            }
+
+            #footer {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            input:active {
+                border: 1px solid #03c75a;
+            }
+
+            input:focus {
+                background-color: #b2eacc;
+                border: 1px solid #b2eacc;
+            }
+
+            img {
+                width: 100%;
+                padding-bottom: 100px;
+            }
+
+            ul {
+                padding-left: 0px;
+                justify-content: center;
+                display: flex;
+                width: 100%;
+                list-style: none;
+                font-size: 12px;
+            }
+
+            ul > li {
+                cursor: pointer;
+            }
+
+            #footer-item {
+                justify-content: center;
+                display: flex;
+                width: 100%;
+            }
+
+            input[type="checkbox"] {
+                margin: 0px;
+                margin-right: 5px;
+                border-radius: 100px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                background-color: #f0f0f0;
+                cursor: pointer;
+                height: 20px;
+                outline: 0;
+                width: 20px;
+            }
+            input[type="checkbox"]::after {
+                margin: 0px;
+                margin-right: 5px;
+                border: solid #dfdfdf;
+                border-width: 0 2px 2px 0;
+                border-radius: 100px;
+                content: "";
+                display: none;
+                height: 40%;
+                left: 40%;
+                position: relative;
+                top: 20%;
+                transform: rotate(45deg);
+                width: 15%;
+            }
+            input[type="checkbox"]:checked {
+                margin: 0px;
+                margin-right: 5px;
+                background: #03c75a;
+                border-radius: 100px;
+            }
+            input[type="checkbox"]:checked::after {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="height: 100px; width: 1000px">
+            <select name="language">
+                <option>한국어</option>
+                <option>English</option>
+                <option>中文</option>
+                <option>中文</option>
+            </select>
+        </div>
+        <div id="frame">
+            <div id="header">
+                <div id="logo">
+                    <h1 style="color: #03c75a">NAVER</h1>
+                </div>
+            </div>
+
+            <div id="main">
+                <table id="logintable">
+                    <tr>
+                        <th id="method">ID 로그인</th>
+                        <th id="method" style="border-bottom: 1px solid #ccc">
+                            [1] 일화용 번호
+                        </th>
+                        <th id="method" style="border-bottom: 1px solid #ccc">
+                            QR 코드
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <form action="#">
+                                <input
+                                    style="
+                                        border: 1px solid #ccc;
+                                        margin-bottom: 0px;
+                                    "
+                                    type="text"
+                                    placeholder="🛹 아이디"
+                                />
+                                <input
+                                    style="
+                                        border: 1px solid #ccc;
+                                        margin-top: 0px;
+                                    "
+                                    type="password"
+                                    placeholder="🦼 비밀번호"
+                                />
+                                <label for="check1"
+                                    ><input
+                                        type="checkbox"
+                                        id="check1"
+                                        name="check1"
+                                        value="remain"
+                                    />로그인 상태 유지</label
+                                >
+                                <label style="text-align: end">ip보안</label>
+                                <input
+                                    type="submit"
+                                    id="login"
+                                    value="로그인"
+                                />
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td colspan="3">
+                            <ul>
+                                <li>비밀번호 찾기　|　</li>
+                                <li>아이디 찾기　|　</li>
+                                <li>회원가입</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="footer">
+                <img
+                    src="https://ssl.pstatic.net/melona/libs/1378/1378592/4d35a7e5aff0e86eb34e_20230628121706570.jpg"
+                />
+                <div id="footer-item">
+                    <ul>
+                        <li>이용약관 |</li>
+                        <li>　개인정보처리방침 |</li>
+                        <li>　책임의 한계와 법적고지 |</li>
+                        <li>　회원정보 고객센터</li>
+                    </ul>
+                </div>
+                <div id="footer-item">
+                    <h4
+                        style="
+                            color: #03c75a;
+                            font-weight: bold;
+                            font-family: 'Franklin Gothic Medium',
+                                'Arial Narrow', Arial, sans-serif;
+                        "
+                    >
+                        NAVER 　
+                    </h4>
+                    <h4>Copyright</h4>
+                    <h4 style="font-weight: 600">@ Naver Corp.</h4>
+                    <h4>All Rights Reserved.</h4>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
