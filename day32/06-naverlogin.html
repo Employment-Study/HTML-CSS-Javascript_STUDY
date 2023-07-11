@@ -11,6 +11,7 @@
             #method {
                 border-left: 1px solid lightgray;
                 border-radius: 5px;
+                cursor: pointer;
             }
             #frame {
                 width: 500px;
@@ -110,7 +111,8 @@
 
             img {
                 width: 100%;
-                padding-bottom: 100px;
+                margin-bottom: 100px;
+                cursor: pointer;
             }
 
             ul {
@@ -169,6 +171,10 @@
             input[type="checkbox"]:checked::after {
                 display: block;
             }
+
+            a {
+                text-decoration: none;
+            }
         </style>
     </head>
     <body>
@@ -191,10 +197,24 @@
                 <table id="logintable">
                     <tr>
                         <th id="method">ID 로그인</th>
-                        <th id="method" style="border-bottom: 1px solid #ccc">
+                        <th
+                            id="method"
+                            style="
+                                border-bottom: 1px solid #dfdfdf;
+                                background-color: #f1f1f1;
+                                color: grey;
+                            "
+                        >
                             [1] 일화용 번호
                         </th>
-                        <th id="method" style="border-bottom: 1px solid #ccc">
+                        <th
+                            id="method"
+                            style="
+                                border-bottom: 1px solid #dfdfdf;
+                                background-color: #f1f1f1;
+                                color: grey;
+                            "
+                        >
                             QR 코드
                         </th>
                     </tr>
@@ -249,28 +269,48 @@
             </div>
 
             <div id="footer">
-                <img
-                    src="https://ssl.pstatic.net/melona/libs/1378/1378592/4d35a7e5aff0e86eb34e_20230628121706570.jpg"
-                />
+                <img src="banner.jpg" />
                 <div id="footer-item">
                     <ul>
-                        <li>이용약관 |</li>
-                        <li>　개인정보처리방침 |</li>
-                        <li>　책임의 한계와 법적고지 |</li>
-                        <li>　회원정보 고객센터</li>
+                        <li>
+                            <a
+                                href="https://policy.naver.com/rules/service.html"
+                                >이용약관　|
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://policy.naver.com/rules/privacy.html"
+                                >　개인정보처리방침 |</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://policy.naver.com/rules/disclaimer.html"
+                                >　책임의 한계와 법적고지 |</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://help.naver.com/service/5640/category/bookmark?lang=ko"
+                                >　회원정보 고객센터</a
+                            >
+                        </li>
                     </ul>
                 </div>
                 <div id="footer-item">
-                    <h4
-                        style="
-                            color: #03c75a;
-                            font-weight: bold;
-                            font-family: 'Franklin Gothic Medium',
-                                'Arial Narrow', Arial, sans-serif;
-                        "
-                    >
-                        NAVER 　
-                    </h4>
+                    <a href="https://www.navercorp.com/">
+                        <h3
+                            style="
+                                color: #03c75a;
+                                font-weight: bold;
+                                font-family: 'Franklin Gothic Medium',
+                                    'Arial Narrow', Arial, sans-serif;
+                            "
+                        >
+                            NAVER 　
+                        </h3>
+                    </a>
                     <h4>Copyright</h4>
                     <h4 style="font-weight: 600">@ Naver Corp.</h4>
                     <h4>All Rights Reserved.</h4>
