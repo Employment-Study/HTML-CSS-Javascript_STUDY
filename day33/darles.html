@@ -21,18 +21,31 @@
             }
 
             .header_lmenu {
-                width: 30%;
+                width: 350px;
                 display: flex;
             }
 
             .header_rmenu {
-                width: 30%;
+                width: 250px;
                 display: flex;
             }
 
+            .header_lmenu > ul > li {
+                cursor: pointer;
+            }
+
+            .header_rmenu > ul > li {
+                cursor: pointer;
+            }
+
             .header_logo {
+                padding-top: 50px;
                 width: 100%;
                 text-align: center;
+            }
+
+            .header_logo:hover {
+                opacity: 0.5;
             }
 
             .header_social_search {
@@ -50,10 +63,12 @@
             }
 
             .header_search > input {
-                font-size: 20px;
+                width: 200px;
+                font-size: 12px;
                 color: lightgrey;
                 border: 1px solid lightgrey;
-                margin-top: 25px;
+                margin-top: 15px;
+                padding: 10px;
             }
 
             .header_search > input::-webkit-input-placeholder {
@@ -71,9 +86,14 @@
             }
 
             .main_menu_button {
-                border: 1px solid black;
+                border-left: 1px solid #dfdfdf;
+                border-right: 1px solid #dfdfdf;
                 width: 40px;
                 padding: 20px;
+            }
+
+            .main_menu_button:hover {
+                background-color: grey;
             }
 
             .main_menu_button > h1 {
@@ -89,12 +109,18 @@
 
             .main_menu_list > ul {
                 display: flex;
-                margin-top: 25px;
+                margin: 0;
                 font-size: 16px;
             }
 
+            .main_menu_list > ul > li {
+                position: relative;
+                cursor: pointer;
+            }
+
             .main_image {
-                width: 1360px;
+                width: 100%;
+                background-size: 100%;
             }
 
             .footer {
@@ -114,11 +140,22 @@
                 width: 30px;
             }
 
+            .rona {
+                padding: 25px 0;
+                color: lightpink;
+            }
+
+            li:hover {
+                color: #ccc;
+            }
+
             .side_bar {
                 font-size: 12px;
                 position: fixed;
                 right: 0px;
                 top: 200px;
+                z-index: 1;
+                background-color: white;
             }
 
             .side_bar > div {
@@ -130,6 +167,66 @@
             .side_bar > div > h1 {
                 margin: 0px;
             }
+
+            hr {
+                width: 100vw;
+                margin: 0;
+                color: lightgrey;
+                border: 0.5px solid #dfdfdf;
+            }
+
+            .dropbtn {
+                position: relative;
+                padding: 25px 0px;
+                color: black;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+                background-color: white;
+            }
+
+            .dropdown {
+                display: inline-block;
+            }
+
+            .dropbtn:hover {
+                color: #ccc;
+            }
+
+            .dropdown-content {
+                position: absolute;
+                display: none;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #f1f1f1;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown:hover .dropbtn {
+                color: #ccc;
+            }
+
+            .side_bar_items {
+                cursor: pointer;
+            }
+            .side_bar_items > h1:hover {
+                color: #ccc;
+            }
         </style>
     </head>
     <body>
@@ -139,13 +236,25 @@
                     <ul>
                         <li>LOGIN</li>
                         <li>JOIN US</li>
-                        <li>CART</li>
+                        <li style="display: flex">
+                            CART
+                            <div
+                                style="
+                                    text-align: center;
+                                    width: 20px;
+                                    border-radius: 50%;
+                                    background-color: #dfdfdf;
+                                    color: white;
+                                "
+                            >
+                                0
+                            </div>
+                        </li>
                         <li>ORDER</li>
                         <li><b>MY PAGE</b></li>
                         <li><b>BOOKMARK</b></li>
                     </ul>
                 </div>
-
                 <div class="header_rmenu">
                     <ul>
                         <li>공지사항</li>
@@ -154,78 +263,147 @@
                         <li>상품후기</li>
                     </ul>
                 </div>
-                <hr style="width: 1000vw" />
-                <div class="header_logo">
-                    <img src="logo.png" alt="로고-2(대문자)" />
+            </div>
+        </div>
+        <hr />
+        <div class="frame">
+            <div class="header_logo">
+                <img src="logo.png" alt="로고-2(대문자)" />
+            </div>
+            <div class="header_social_search">
+                <div class="header_social">
+                    <ul style="margin: 0px; justify-content: flex-start">
+                        <li>
+                            <img src="free-icon-facebook-145802.png" />
+                        </li>
+                        <li>
+                            <img src="free-icon-instagram-4138124.png" />
+                        </li>
+                        <li>
+                            <img src="free-icon-youtube-logo-37922.png" />
+                        </li>
+                    </ul>
                 </div>
-
-                <div class="header_social_search">
-                    <div class="header_social">
-                        <ul>
-                            <li>
-                                <img src="free-icon-facebook-145802.png" />
-                            </li>
-                            <li>
-                                <img src="free-icon-instagram-4138124.png" />
-                            </li>
-                            <li>
-                                <img src="free-icon-youtube-logo-37922.png" />
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="header_search">
-                        <input
-                            type="text"
-                            name="search"
-                            id="search"
-                            placeholder="🔍"
-                        />
-                    </div>
+                <div class="header_search">
+                    <input
+                        type="text"
+                        name="search"
+                        id="search"
+                        placeholder="🔍"
+                    />
                 </div>
             </div>
-            <hr style="width: 100vw; z-index: 0" />
+        </div>
+
+        <hr style="width: 100vw; z-index: 0" />
+        <div class="frame">
             <div class="main">
                 <div class="main_menu">
                     <div class="main_menu_button"><h1>☰</h1></div>
                     <div class="main_menu_list">
                         <ul>
-                            <li style="color: lightpink">RONA universe</li>
-                            <li>남성의류</li>
-                            <li>아우터</li>
-                            <li>탑</li>
-                            <li>드레스</li>
-                            <li>바텀</li>
-                            <li>악세사리</li>
+                            <li class="rona">RONA universe</li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn">남성의류</button>
+                                    <div class="dropdown-content">
+                                        <a href="#">아우터</a>
+                                        <a href="#">탑</a>
+                                        <a href="#">세트</a>
+                                        <a href="#">바텀</a>
+                                        <a href="#">악세사리</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn">아우터</button>
+                                    <div class="dropdown-content"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn">탑</button>
+                                    <div class="dropdown-content">
+                                        <a href="#">니트</a>
+                                        <a href="#">셔츠</a>
+                                        <a href="#">블라우스</a>
+                                        <a href="#">후드, 맨투맨</a>
+                                        <a href="#">반팔 T</a>
+                                        <a href="#">긴팔 T</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn">드레스</button>
+                                    <div class="dropdown-content">
+                                        <a href="#">롱/미디</a>
+                                        <a href="#">미니</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn">바텀</button>
+                                    <div class="dropdown-content">
+                                        <a href="#">팬츠</a>
+                                        <a href="#">스커트</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn">악세사리</button>
+                                    <div class="dropdown-content">
+                                        <a href="#">ER</a>
+                                        <a href="#">NC</a>
+                                        <a href="#">BC</a>
+                                        <a href="#">Etc</a>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
-                    <hr style="width: 100vw" />
-                    <div class="main_image">
-                        <img src="main.jpg" width="100%" />
-                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="side_bar">
-                <div
-                    style="
-                        background-color: black;
-                        color: white;
-                        font-weight: 700;
-                    "
-                >
-                    <h1><</h1>
-                </div>
-                <div><h1>🔍</h1></div>
-                <div><h1>🚚</h1></div>
-                <div><h1>🛒</h1></div>
-                <div><h1>❤</h1></div>
-                <div><h1>🕗</h1></div>
-                <div>
-                    <h1>∧</h1>
-                    <h1>∨</h1>
-                </div>
+        <hr style="width: 100vw; z-index: 0" />
+        <div class="frame">
+            <div class="main_image">
+                <img src="main.jpg" width="100%" />
             </div>
+        </div>
 
+        <div class="side_bar">
+            <div
+                style="background-color: black; color: white; font-weight: 700"
+            >
+                <h1><</h1>
+            </div>
+            <div class="side_bar_items" title="검색"><h1>🔍</h1></div>
+            <div class="side_bar_items" title="주문 배송조회"><h1>🚚</h1></div>
+            <div class="side_bar_items" title="장바구니"><h1>🛒</h1></div>
+            <div class="side_bar_items" title="관심상품"><h1>❤</h1></div>
+            <div class="side_bar_items" title="최근 본 상품"><h1>🕗</h1></div>
+            <div
+                class="side_bar_items"
+                title="카카오톡 상담"
+                style="
+                    background-image: url(kakaotalk.jpg);
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    height: 40px;
+                "
+            ></div>
+            <div class="side_bar_items" title="검색">
+                <h1>∧</h1>
+                <h1>∨</h1>
+            </div>
+        </div>
+        <div class="frame">
             <div class="footer"></div>
         </div>
     </body>
