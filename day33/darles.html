@@ -110,7 +110,7 @@
             .main_menu_list > ul {
                 display: flex;
                 margin: 0;
-                font-size: 16px;
+                font-size: 12px;
             }
 
             .main_menu_list > ul > li {
@@ -179,7 +179,7 @@
                 position: relative;
                 padding: 25px 0px;
                 color: black;
-                font-size: 16px;
+                font-size: 12px;
                 border: none;
                 cursor: pointer;
                 background-color: white;
@@ -226,6 +226,14 @@
             }
             .side_bar_items > h1:hover {
                 color: #ccc;
+            }
+
+            li > img {
+                filter: grayscale(1);
+            }
+
+            li > img:hover {
+                filter: grayscale(0);
             }
         </style>
     </head>
@@ -280,7 +288,10 @@
                             <img src="free-icon-instagram-4138124.png" />
                         </li>
                         <li>
-                            <img src="free-icon-youtube-logo-37922.png" />
+                            <img
+                                style="margin-top: 14px"
+                                src="free-icon-youtube-logo-37922.png"
+                            />
                         </li>
                     </ul>
                 </div>
