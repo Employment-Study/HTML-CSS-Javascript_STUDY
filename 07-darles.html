@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header{
+            display: flex;
+            justify-content: space-between;
+            font-size: 5px;
+            margin-left: 40px;
+        }
+        .bold{
+            font-weight: bold;
+        }
+        .header > ul {
+            flex: 0.35;
+            list-style: none;
+            justify-content: space-around;
+            display: flex;
+            margin: 5px ;
+            padding: 0;
+        }
+        .logo{
+            height: 30px;
+            text-align: center;
+            padding-top: 30px;
+            font-size: 25px;
+            font-weight: bold;
+
+        }
+        .sns {
+            height: 40px;
+            justify-content: space-between;
+            display: flex;
+            margin-top: 5px;
+            margin-left: 50px;
+        }
+        .sns > ul {
+            padding: 0px 5px 5px 0px ;
+            list-style: none;
+            justify-content: space-between;
+            display: flex;
+            flex: 0.0;
+        }
+        .sns > div>input{
+            margin-top: 20px;
+        }
+        .menu {
+            height: 20px;
+            display: flex;
+        }
+        .menu > ul {
+            list-style: none;
+            display: flex;
+            flex:  0.85;
+            justify-content: space-between;
+            margin: 5px 10px 10px;
+            font-size: 5px;
+        }
+        .menu > div {
+            margin-top: 0px;
+            margin-left: 60px;
+        }
+        img {
+            margin: 0px auto;
+            display: flex;
+        }
+        .hr{
+            margin-bottom: 0;
+            border-color: rgb(222, 222, 222);
+
+        }
+    
+
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+            <ul>
+                <li>LOGIN</li>
+                <li>JOIN US </li>
+                <li>CART1️⃣ </li>
+                <li>ORDER </li>
+                <li>|</li>
+                <li class="bold">MY PAGE</li>
+                <li class="bold">|</li>
+                <li class="bold">BOOKMARK</li>
+            </ul>
+
+            <ul>
+                <li>공지사항</li>
+                <li>이벤트</li>
+                <li>상품문의</li>
+                <li>상품후기</li>
+            </ul>
+    </div>
+
+    <hr>
+    <div class="logo">D'ARLES</div>
+
+    <div class="sns">
+        <ul>
+            <li><img style="margin: auto;" src="image/페이스북.png" 
+                width="25px"></li>
+            <li><img style="margin: auto;" src="image/인스타.png"
+                width="25px"></li>
+            <li><img style="margin: auto;" src="image/유튜브.png"
+                width="25px"></li>
+        </ul>
+        <div><input type="search">🔍</div>
+    </div>
+
+    <hr>
+    <div class="menu">
+        <div>☰</div>
+        <ul>
+            <li class="menu_details">RONA universe</li>
+            <li>남성의류</li>
+            <li>아우터</li>
+            <li>탑</li>
+            <li>드레스</li>
+            <li>바텀</li>
+            <li>악세사리</li>
+        </ul>
+    </div>
+    <hr class="hr">         
+
+    <div class="footer">
+        <img src="https://darles.co.kr/web/upload/NNEditor/20210504/0bf1a699ea515735d0841f86daa11cc0.jpg" 
+                width="90%">
+    </div>
+</body>
+</html>
