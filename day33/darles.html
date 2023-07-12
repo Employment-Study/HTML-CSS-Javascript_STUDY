@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>서유리의 쇼핑몰 다를</title>
+        <style>
+            html {
+                font-size: 12px;
+            }
+
+            .frame {
+                width: 1320px;
+                margin: auto;
+            }
+
+            .header {
+                display: flex;
+                justify-content: space-between;
+                flex-flow: wrap;
+            }
+
+            .header_lmenu {
+                width: 30%;
+                display: flex;
+            }
+
+            .header_rmenu {
+                width: 30%;
+                display: flex;
+            }
+
+            .header_logo {
+                width: 100%;
+                text-align: center;
+            }
+
+            .header_social_search {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .header_social {
+                width: 200px;
+            }
+
+            .header_search > input {
+                margin: auto;
+            }
+
+            .header_search > input {
+                font-size: 20px;
+                color: lightgrey;
+                border: 1px solid lightgrey;
+                margin-top: 25px;
+            }
+
+            .header_search > input::-webkit-input-placeholder {
+                text-align: right;
+            }
+
+            .main {
+                display: flex;
+            }
+
+            .main_menu {
+                width: 100%;
+                display: flex;
+                flex-flow: wrap;
+            }
+
+            .main_menu_button {
+                border: 1px solid black;
+                width: 40px;
+                padding: 20px;
+            }
+
+            .main_menu_button > h1 {
+                margin: 0px;
+                margin-left: 10px;
+            }
+
+            .main_menu_list {
+                width: 1200px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .main_menu_list > ul {
+                display: flex;
+                margin-top: 25px;
+                font-size: 16px;
+            }
+
+            .main_image {
+                width: 1360px;
+            }
+
+            .footer {
+                border: 1px solid green;
+            }
+
+            ul {
+                width: 100%;
+                justify-content: space-around;
+                padding-left: 0px;
+                list-style: none;
+                display: flex;
+            }
+
+            li > img {
+                margin: 10px;
+                width: 30px;
+            }
+
+            .side_bar {
+                font-size: 12px;
+                position: fixed;
+                right: 0px;
+                top: 200px;
+            }
+
+            .side_bar > div {
+                padding: 10px;
+                border: 1px solid black;
+                text-align: center;
+            }
+
+            .side_bar > div > h1 {
+                margin: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="frame">
+            <div class="header">
+                <div class="header_lmenu">
+                    <ul>
+                        <li>LOGIN</li>
+                        <li>JOIN US</li>
+                        <li>CART</li>
+                        <li>ORDER</li>
+                        <li><b>MY PAGE</b></li>
+                        <li><b>BOOKMARK</b></li>
+                    </ul>
+                </div>
+
+                <div class="header_rmenu">
+                    <ul>
+                        <li>공지사항</li>
+                        <li>이벤트</li>
+                        <li>상품문의</li>
+                        <li>상품후기</li>
+                    </ul>
+                </div>
+                <hr style="width: 1000vw" />
+                <div class="header_logo">
+                    <img src="logo.png" alt="로고-2(대문자)" />
+                </div>
+
+                <div class="header_social_search">
+                    <div class="header_social">
+                        <ul>
+                            <li>
+                                <img src="free-icon-facebook-145802.png" />
+                            </li>
+                            <li>
+                                <img src="free-icon-instagram-4138124.png" />
+                            </li>
+                            <li>
+                                <img src="free-icon-youtube-logo-37922.png" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header_search">
+                        <input
+                            type="text"
+                            name="search"
+                            id="search"
+                            placeholder="🔍"
+                        />
+                    </div>
+                </div>
+            </div>
+            <hr style="width: 100vw; z-index: 0" />
+            <div class="main">
+                <div class="main_menu">
+                    <div class="main_menu_button"><h1>☰</h1></div>
+                    <div class="main_menu_list">
+                        <ul>
+                            <li style="color: lightpink">RONA universe</li>
+                            <li>남성의류</li>
+                            <li>아우터</li>
+                            <li>탑</li>
+                            <li>드레스</li>
+                            <li>바텀</li>
+                            <li>악세사리</li>
+                        </ul>
+                    </div>
+                    <hr style="width: 100vw" />
+                    <div class="main_image">
+                        <img src="main.jpg" width="100%" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="side_bar">
+                <div
+                    style="
+                        background-color: black;
+                        color: white;
+                        font-weight: 700;
+                    "
+                >
+                    <h1><</h1>
+                </div>
+                <div><h1>🔍</h1></div>
+                <div><h1>🚚</h1></div>
+                <div><h1>🛒</h1></div>
+                <div><h1>❤</h1></div>
+                <div><h1>🕗</h1></div>
+                <div>
+                    <h1>∧</h1>
+                    <h1>∨</h1>
+                </div>
+            </div>
+
+            <div class="footer"></div>
+        </div>
+    </body>
+</html>

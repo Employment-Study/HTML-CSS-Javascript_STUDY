@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>05-overflow.html</title>
+        <style>
+            h1 {
+                text-align: center;
+            }
+            div {
+                width: 100%;
+            }
+            table {
+                margin: auto;
+                margin-bottom: 10px;
+                border-collapse: collapse;
+            }
+
+            th,
+            td {
+                border: 1px solid black;
+                padding: 20px 40px;
+            }
+
+            fieldset {
+                margin: auto;
+                width: 300px;
+                height: 120px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>05-overflow.html</h1>
+        <hr />
+        <div>
+            <table>
+                <tr>
+                    <td>overflow : auto</td>
+                    <td>
+                        내용에 따라서 스크롤바가 생길수도 있고 없을 수도 있다.
+                    </td>
+                </tr>
+                <tr>
+                    <td>overflow : hidden</td>
+                    <td>
+                        범위를 벗어나는 내용은 숨긴다. 스크롤바는 강제로
+                        사라진다.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>overflow : scroll</td>
+                    <td>내용과 상관없이 항상 스크롤바를 표시한다.</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        overflow: 내용이 영역을 벗어날 경우의 처리 방식을
+                        결정<br />
+                        overflow-x : 내용이 가로 영역을 벗어날 경우의 처리
+                        방식을 결정<br />
+                        overflow-y : 내용이 세로 영역을 벗어날 경우의 처리
+                        방식을 결정
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <fieldset style="overflow: hidden">
+                <legend><b>overflow: hidden</b></legend>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Mollitia accusamus, animi consectetur officia hic alias neque,
+                facilis temporibus amet dolorum sed esse, quidem voluptatum
+                veniam quae recusandae sapiente eos in?
+            </fieldset>
+            <br />
+
+            <fieldset style="overflow: auto">
+                <legend><b>overflow: auto</b></legend>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Mollitia accusamus, animi consectetur officia hic alias neque,
+                facilis temporibus amet dolorum sed esse, quidem voluptatum
+                veniam quae recusandae sapiente eos in?
+            </fieldset>
+            <br />
+
+            <fieldset style="overflow: scroll">
+                <legend><b>overflow: scroll</b></legend>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Mollitia accusamus, animi consectetur officia hic alias neque,
+                facilis temporibus amet dolorum sed esse, quidem voluptatum
+                veniam quae recusandae sapiente eos in?
+            </fieldset>
+            <br />
+        </div>
+    </body>
+</html>
