@@ -3,6 +3,14 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+        />
         <title>서유리의 쇼핑몰 다를</title>
         <style>
             html {
@@ -14,10 +22,19 @@
                 margin: auto;
             }
 
+            .sticky {
+                position: sticky;
+                top: 0px;
+                border-bottom: white 1px solid;
+                background-color: rgba(255, 255, 255, 0.5);
+            }
+
             .header {
+                background-color: white;
                 display: flex;
                 justify-content: space-between;
                 flex-flow: wrap;
+                opacity: 1;
             }
 
             .header_lmenu {
@@ -58,6 +75,10 @@
                 width: 200px;
             }
 
+            .header_social > ul {
+                cursor: pointer;
+            }
+
             .header_search > input {
                 margin: auto;
             }
@@ -75,11 +96,19 @@
                 text-align: right;
             }
 
+            hr {
+                width: 100vw;
+                margin: 0;
+                color: lightgrey;
+                border: 0.5px solid #dfdfdf;
+            }
+
             .main {
                 display: flex;
             }
 
             .main_menu {
+                background-color: white;
                 width: 100%;
                 display: flex;
                 flex-flow: wrap;
@@ -142,7 +171,8 @@
 
             .rona {
                 padding: 25px 0;
-                color: lightpink;
+                color: hotpink;
+                font-weight: 700;
             }
 
             li:hover {
@@ -168,13 +198,6 @@
                 margin: 0px;
             }
 
-            hr {
-                width: 100vw;
-                margin: 0;
-                color: lightgrey;
-                border: 0.5px solid #dfdfdf;
-            }
-
             .dropbtn {
                 position: relative;
                 padding: 25px 0px;
@@ -182,7 +205,7 @@
                 font-size: 12px;
                 border: none;
                 cursor: pointer;
-                background-color: white;
+                background-color: rgba(255, 255, 255, 0);
             }
 
             .dropdown {
@@ -195,18 +218,20 @@
 
             .dropdown-content {
                 position: absolute;
+                right: -100px;
                 display: none;
-                background-color: #f9f9f9;
                 min-width: 160px;
                 box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
                 z-index: 1;
             }
 
             .dropdown-content a {
+                background-color: white;
                 color: black;
                 padding: 12px 16px;
                 text-decoration: none;
                 display: block;
+                opacity: 1;
             }
 
             .dropdown-content a:hover {
@@ -235,10 +260,14 @@
             li > img:hover {
                 filter: grayscale(0);
             }
+
+            #search {
+                margin-bottom: 10px;
+            }
         </style>
     </head>
     <body>
-        <div class="frame">
+        <div class="frame sticky">
             <div class="header">
                 <div class="header_lmenu">
                     <ul>
@@ -246,17 +275,18 @@
                         <li>JOIN US</li>
                         <li style="display: flex">
                             CART
-                            <div
+                            <span
                                 style="
                                     text-align: center;
                                     width: 20px;
                                     border-radius: 50%;
-                                    background-color: #dfdfdf;
+                                    background-color: #d6d6d6;
                                     color: white;
+                                    margin-left: 2px;
                                 "
                             >
                                 0
-                            </div>
+                            </span>
                         </li>
                         <li>ORDER</li>
                         <li><b>MY PAGE</b></li>
@@ -307,7 +337,7 @@
         </div>
 
         <hr style="width: 100vw; z-index: 0" />
-        <div class="frame">
+        <div class="frame sticky" style="top: 40px">
             <div class="main">
                 <div class="main_menu">
                     <div class="main_menu_button"><h1>☰</h1></div>
@@ -415,7 +445,9 @@
             </div>
         </div>
         <div class="frame">
-            <div class="footer"></div>
+            <div class="footer">
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            </div>
         </div>
     </body>
 </html>

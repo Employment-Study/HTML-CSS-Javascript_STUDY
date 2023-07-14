@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>01-dropdown.html</title>
+        <style>
+            a {
+                /* a 태그의 기본 underline을 없애준다.*/
+                text-decoration: none;
+                /*색은 상위 요소를 상속받는다*/
+                color: inherit;
+            }
+
+            a:hover {
+                /*a태그에 마우스를 올렸을 때 글자 꾸밈 밑줄이 들어간다.*/
+                text-decoration: underline;
+            }
+
+            #nav > ul {
+                /*nav의 자손 unordered list에서 리스트가 기본으로 가지는 꾸밈점을 없애준다.*/
+                list-style: none;
+                /*list가 가지는 기본 좌측 padding을 없앤다.*/
+                padding-left: 0;
+                /*flex로 세로로 요소들을 배치하도록한다.*/
+                display: flex;
+                /*정렬을 서로 끝에서 끝까지 떨어지도록 최대한 간격을 벌인다.*/
+                justify-content: space-between;
+                /*width는 800px로 고전한다.*/
+                width: 800px;
+                /*상하좌우 마진을 자동으로 정하게 한다.*/
+                margin: auto;
+            }
+
+            #nav > ul > li {
+                /*li를 감싸는 테두리는 2px의 굵기를 가지는 검은색 실선이다.*/
+                border: 2px solid black;
+                /*길이는 flex:요소들의 수 분의 1만큼을 차지한다.*/
+                flex: 1;
+                /*padding은 상하 좌우로 내부 간격을 10px만큼 띄운다.*/
+                padding: 10px;
+                /*li의 모든 글자들을 가운데 정렬한다.*/
+                text-align: center;
+                /*다른 요소들과의 간격을 오른쪽으로 2px만큼 오히려 더 당긴다./*/
+                margin-right: -2px;
+                /*li의 시작점을 기준점으로 바꾼다 (원래 없으면 body가 기준)*/
+                position: relative;
+                background-color: white;
+            }
+
+            #nav > ul > li:hover {
+                /*메뉴에 마우스를 가져가대면 배경색이 pink*/
+                background-color: pink;
+                /*마우스 포인트가 pointer로 바뀐다.*/
+                cursor: pointer;
+            }
+
+            ol {
+                /*하지만 보이지 않는다.*/
+                height: 0;
+                /*리스트가 가지는 꾸밈점들과 패딩값을 0으로 바꾼다.*/
+                list-style: none;
+                padding-left: 0;
+                /*이 리스트의 너비는 140px*/
+                width: fit-content;
+                box-sizing: border-box;
+                /*relative영역 기준으로 위치를 정한다.*/
+                position: absolute;
+                /*relative영역의 시작점을 기준으로 높이 41px 좌측으로 -1px떨어진 지점에 위치한다.*/
+                top: 41px;
+                left: -1px;
+                overflow: hidden;
+                visibility: hidden;
+            }
+
+            ol > li {
+                /*배경색을 흰색으로 해야 다른요소와 겹쳤을 경우 위에 띄울 수 있음*/
+                background-color: white;
+                /*2px굵기를 가지는 검은 색 실선이 테두리*/
+                border: 2px solid black;
+                /*내부 여백을 10px씩 상하좌우로 띄운다.*/
+                padding: 10px;
+                /*너비를 상속받는다.*/
+                width: 138px;
+                /*아래 외부 간격을 오히려 2px당긴다.*/
+                margin-bottom: -2px;
+            }
+
+            ul > li:hover > ol {
+                /*마우스를 가져다 대면 ol이 화면에 나타나는데 display이다.*/
+                visibility: visible;
+                height: 250px;
+                transition-duration: 1s;
+            }
+
+            ol > li:hover {
+                /*마우스를 가져다 댄 리스트의 요소에 마우스를 가져다대면 요소하나의 배경색이 aqua로 바뀐다.*/
+                background-color: aqua;
+            }
+
+            img {
+                /*이미지는 위쪽으로 20px의 간격을 가진다.*/
+                padding-top: 20px;
+                /*너비는 800px*/
+                width: 800px;
+                /*이미지는 글자취급을 하기 때문에 block으로 바꿔준다.*/
+                display: block;
+
+                /*양쪽 너비를 가운데 정렬한다.*/
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>01-dropdown.html</h1>
+        <hr />
+
+        <h3>hover 선택자를 활용하여 dropdown 메뉴를 구현하세요</h3>
+        <div id="nav">
+            <ul>
+                <li>
+                    <a href="#">menu1</a>
+                    <ol>
+                        <li><a href="#">submenu1</a></li>
+                        <li><a href="#">submenu2</a></li>
+                        <li><a href="#">submenu3</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#">menu2</a>
+                </li>
+                <li>
+                    <a href="#">menu3</a>
+                    <ol>
+                        <li><a href="#">submenu1</a></li>
+                        <li><a href="#">submenu2</a></li>
+                        <li><a href="#">submenu3</a></li>
+                        <li><a href="#">submenu3</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#">menu4</a>
+                    <ol>
+                        <li><a href="#">submenu1</a></li>
+                        <li><a href="#">submenu2</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#">menu5</a>
+                    <ol>
+                        <li><a href="#">submenu1</a></li>
+                        <li><a href="#">submenu2</a></li>
+                        <li><a href="#">submenu3</a></li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        <img src="image/jisoo.png" />
+    </body>
+</html>

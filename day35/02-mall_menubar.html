@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>02-mall_menubar.html</title>
+        <style>
+            details ol {
+                all: unset;
+                padding-left: 20px;
+                display: block;
+                position: static;
+                width: fit-content;
+                height: fit-content;
+                list-style: decimal;
+                border: 0;
+            }
+
+            details li {
+                width: fit-content;
+                font-size: 1rem !important;
+                /*!important : 상속 및 선택자 상세도에 상관없이 무조건 적용*/
+            }
+        </style>
+    </head>
+    <body>
+        <h1>02-mall_menubar.html</h1>
+        <hr />
+
+        <details style="width: 1260px; margin: 50px auto">
+            <summary><b>메뉴 구성 순서</b></summary>
+            <fieldset>
+                <ol type="1">
+                    <li>주 메뉴부터 구성한다.(ul, li, flex)</li>
+                    <li>서브 메뉴를 한 줄만 작성한다.</li>
+                    <li>
+                        주 메뉴와 서브 메뉴는 테두리나 배경색으로 보이게 한다.
+                    </li>
+                    <li>서브메뉴의 위치를 지정한다. (absolute,top,left)</li>
+                    <li>서브메뉴의 여백 및 정렬, 크기를 지정한다.</li>
+                    <li>
+                        hover를 이용하여 마우스를 올리면 나타내도록 작성한다
+                    </li>
+                </ol>
+            </fieldset>
+        </details>
+    </body>
+</html>

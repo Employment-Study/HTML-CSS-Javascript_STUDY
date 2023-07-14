@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>01-selector.html</title>
+        <style>
+            #root {
+                border: 2px solid black;
+                width: fit-content;
+            }
+            .row {
+                width: 500px;
+                display: flex;
+            }
+            .data {
+                width: 100%;
+                border: 1px solid #dadada;
+                padding: 5px 10px;
+            }
+
+            .row > .data:first-child {
+                width: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>01-selector.html</h1>
+        <hr />
+        <div id="root">
+            <div class="row" style="background-color: #f6f6f6">
+                <div class="data">선택자</div>
+                <div class="data">형태</div>
+                <div class="data">예시</div>
+            </div>
+            <div class="row">
+                <div class="data">전체 선택자</div>
+                <div class="data">*</div>
+                <div class="data">*</div>
+            </div>
+
+            <div class="row">
+                <div class="data">태그 선택자</div>
+                <div class="data">태그</div>
+                <div class="data">h1</div>
+            </div>
+
+            <div class="row">
+                <div class="data">아이디 선택자</div>
+                <div class="data">#아이디</div>
+                <div class="data">#root</div>
+            </div>
+
+            <div class="row">
+                <div class="data">아이디 선택자</div>
+                <div class="data">#아이디</div>
+                <div class="data">#root</div>
+            </div>
+
+            <div class="row">
+                <div class="data">클래스 선택자</div>
+                <div class="data">.클래스</div>
+                <div class="data">.row</div>
+            </div>
+
+            <div class="row">
+                <div class="data">자손 선택자</div>
+                <div class="data">선택자A > 선택자B</div>
+                <div class="data">.row > .data</div>
+            </div>
+
+            <div class="row">
+                <div class="data">후손 선택자</div>
+                <div class="data">선택자A 선택자B</div>
+                <div class="data">.row .data</div>
+            </div>
+
+            <div class="row">
+                <div class="data">속성 선택자</div>
+                <div class="data">선택자[속성="값"]</div>
+                <div class="data">input[type="text"]</div>
+            </div>
+
+            <div class="row">
+                <div class="data">속성 포함 선택자</div>
+                <div class="data">선택자[속성*="값"]</div>
+                <div class="data">img[src*="jpg"]</div>
+                <!-- img태그에서 src 속성이 jpg를 포함하는 것만 -->
+            </div>
+
+            <div class="row">
+                <div class="data">속성 시작 선택자</div>
+                <div class="data">선택자[속성 ^="값"]</div>
+                <div class="data">img[src ^="danbi"]</div>
+                <!-- img태그에서 src 속성이 danbi로 시작하는 것만 -->
+            </div>
+
+            <div class="row">
+                <div class="data">속성 시작 선택자</div>
+                <div class="data">선택자[속성 $="값"]</div>
+                <div class="data">img[src $="gif"]</div>
+                <!-- img태그에서 src 속성이 gif로  끝나는 것만 -->
+            </div>
+
+            <div class="row">
+                <div class="data">동위 선택자</div>
+                <div class="data">선택자A + 선택자 B</div>
+                <div class="data">h1 + h2, 다음 바로 다음 요소</div>
+            </div>
+
+            <div class="row">
+                <div class="data">동위 선택자</div>
+                <div class="data">선택자A ~ 선택자 B</div>
+                <div class="data">h1 ~ h2, 다음 모든 요소</div>
+            </div>
+
+            <div class="row">
+                <div class="data">부정 선택자</div>
+                <div class="data">:not(선택자)</div>
+                <div class="data">input:not([type="checkbox"])</div>
+                <!-- 타입이 체크박스가 아닌 모든 요소를 선택한다. -->
+            </div>
+        </div>
+    </body>
+</html>
