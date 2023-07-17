@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>05-best_car.html</title>
+        <style>
+            div {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            #root {
+                margin: 20px auto;
+                width: 900px;
+            }
+
+            .flex {
+                margin: auto;
+                display: flex;
+                flex-wrap: wrap;
+                width: 606px;
+            }
+
+            .item {
+                position: relative;
+                width: 200px;
+                height: 180px;
+                margin: 0 1px;
+                overflow: hidden;
+            }
+
+            .image {
+                position: absolute;
+                text-align: center;
+                overflow: hidden;
+                top: 0;
+                left: 0;
+                height: 180px;
+                width: 200px;
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                transition-duration: 0.5s;
+            }
+
+            .content {
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                width: 200px;
+                height: 80px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                font-size: 1.5em;
+                color: white;
+                background: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.4),
+                    transparent
+                );
+            }
+
+            .item:hover > .image {
+                transform: scale(130%);
+                transition-duration: 0.5s;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>05-best_car.html</h1>
+        <hr />
+
+        <div id="root">
+            <div class="flex">
+                <div class="item">
+                    <div
+                        class="image"
+                        style="background-image: url('image/짱구.png')"
+                    ></div>
+                    <div class="content">짱구</div>
+                </div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+        </div>
+    </body>
+</html>

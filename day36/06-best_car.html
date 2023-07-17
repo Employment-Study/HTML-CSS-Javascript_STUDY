@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>06-best_car.html</title>
+        <style>
+            div {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            #root {
+                margin: 20px auto;
+                width: 900px;
+            }
+
+            .flex {
+                margin: auto;
+                display: flex;
+                flex-wrap: wrap;
+                width: 738px;
+            }
+
+            .item {
+                position: relative;
+                width: 244px;
+                height: 183px;
+                margin: 0 1px;
+                overflow: hidden;
+            }
+
+            .image {
+                position: absolute;
+                text-align: center;
+                overflow: hidden;
+                top: 0;
+                left: 0;
+                height: 183px;
+                width: 244px;
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                transition-duration: 0.5s;
+            }
+
+            .content {
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                width: 244px;
+                height: 80px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                font-size: 1.5em;
+                color: white;
+                background: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.5),
+                    transparent
+                );
+            }
+
+            .item:hover > .image {
+                transform: scale(130%);
+                transition-duration: 0.5s;
+            }
+
+            .car_num {
+                font-weight: 700;
+                width: 30px;
+                font-size: 1.2em;
+                padding: 10px;
+                margin-right: 10px;
+            }
+            
+            .car_info {
+                font-size: 0.7em;
+                width: 214px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .car_name {
+                width: 100%;
+            }
+
+            .car_viewcount {
+                font-size: 0.7em;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+
+            .car_info > div:first-child {
+                font-weight: 700;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>06-best_car.html</h1>
+        <hr />
+
+        <div id="root">
+            <h3 style="margin-left: 81px">사이버매장 베스트카</h3>
+            <div class="flex">
+                <div class="item">
+                    <div
+                        class="image"
+                        style="
+                            background-image: url('https://image.bobaedream.co.kr/2017/newprd/cyber-756237_2019.jpg');
+                        "
+                    ></div>
+                    <div class="content">
+                        <div class="car_num">1</div>
+                        <div class="car_info">
+                            <div class="car_name">마이바흐 65 5.5 v12</div>
+                            <div class="car_viewcount">👁‍🗨 1918명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div
+                        class="image"
+                        style="
+                            background-image: url('https://image.bobaedream.co.kr/2017/newprd/cyber-766104_2019.jpg');
+                        "
+                    ></div>
+                    <div class="content">
+                        <div class="car_num">2</div>
+                        <div class="car_info">
+                            <div class="car_name">
+                                쉐보레(국산)리얼 뉴 콜...
+                            </div>
+                            <div class="car_viewcount">👁‍🗨 1338명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div
+                        class="image"
+                        style="
+                            background-image: url('https://image.bobaedream.co.kr/2017/newprd/cyber-765191_2019.jpg');
+                        "
+                    ></div>
+                    <div class="content">
+                        <div class="car_num">3</div>
+                        <div class="car_info">
+                            <div class="car_name">페라리 로마 3.9 V8</div>
+                            <div class="car_viewcount">👁‍🗨 1102명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div
+                        class="image"
+                        style="
+                            background-image: url('https://image.bobaedream.co.kr/2017/newprd/cyber-766260_2019.jpg');
+                        "
+                    ></div>
+                    <div class="content">
+                        <div class="car_num">4</div>
+                        <div class="car_info">
+                            <div class="car_name">벤츠 마이바흐</div>
+                            <div class="car_viewcount">👁‍🗨 879명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div
+                        class="image"
+                        style="
+                            background-image: url('https://image.bobaedream.co.kr/2017/newprd/cyber-766261_2019.jpg');
+                        "
+                    ></div>
+                    <div class="content">
+                        <div class="car_num">5</div>
+                        <div class="car_info">
+                            <div class="car_name">벤츠 마이바흐 S560 4매틱</div>
+                            <div class="car_viewcount">👁‍🗨 574명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div
+                        class="image"
+                        style="
+                            background-image: url('https://image.bobaedream.co.kr/2017/newprd/cyber-766273_2019.jpg');
+                        "
+                    ></div>
+                    <div class="content">
+                        <div class="car_num">6</div>
+                        <div class="car_info">
+                            <div class="car_name">롤스로이스 던 6.6 V12</div>
+                            <div class="car_viewcount">👁‍🗨 508명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div
+                        class="image"
+                        style="
+                            background-image: url('https://image.bobaedream.co.kr/2017/newprd/cyber-756679_2019.jpg');
+                        "
+                    ></div>
+                    <div class="content">
+                        <div class="car_num">7</div>
+                        <div class="car_info">
+                            <div class="car_name">벤츠 S500L 4매틱</div>
+                            <div class="car_viewcount">👁‍🗨 461명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div
+                        class="image"
+                        style="
+                            background-image: url('https://image.bobaedream.co.kr/2017/newprd/cyber-764873_2019.jpg');
+                        "
+                    ></div>
+                    <div class="content">
+                        <div class="car_num">8</div>
+                        <div class="car_info">
+                            <div class="car_name">벤틀리 컨티넨탈 GT6.0</div>
+                            <div class="car_viewcount">👁‍🗨 441명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div
+                        class="image"
+                        style="
+                            background-image: url('https://image.bobaedream.co.kr/2017/newprd/cyber-766163_2019.jpg');
+                        "
+                    ></div>
+                    <div class="content">
+                        <div class="car_num">9</div>
+                        <div class="car_info">
+                            <div class="car_name">
+                                포르쉐 911 카레라 4S 카..
+                            </div>
+                            <div class="car_viewcount">👁‍🗨 394명</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

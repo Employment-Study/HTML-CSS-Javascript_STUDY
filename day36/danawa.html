@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>danawa.html</title>
+        <style>
+            .frame {
+                width: 1260px;
+                maring: 0 auto;
+            }
+
+            header {
+                padding: 20px;
+                border-bottom: 2px solid #dadada;
+            }
+
+            aside {
+                background-color: blue;
+                color: white;
+            }
+
+            #main1 {
+                display: flex;
+            }
+
+            #main1 > aside {
+                flex: 1;
+            }
+
+            #main1 > article {
+                flex: 4;
+                padding: 20px;
+            }
+
+            #main1 nav > ul {
+                position: relative;
+            }
+
+            #main1 nav > ul > li {
+                padding: 8px;
+            }
+
+            #main1 nav > ul > li:hover {
+                color: blue;
+                background-color: white;
+                cursor: pointer;
+            }
+
+            #main1 nav > ul > li > section {
+                display: none;
+                position: absolute;
+                top: -16px;
+                left: 244px;
+                width: 500px;
+                height: 442px;
+                background-color: white;
+                box-sizing: border-box;
+            }
+
+            #main1 nav > ul > li:hover > section {
+                display: block;
+                border: 2px solid red;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 class="frame">danawa.com</h1>
+        </header>
+
+        <main class="frame">
+            <div id="main1">
+                <aside>
+                    <nav>
+                        <ul>
+                            <li>
+                                가전·TV
+                                <section>
+                                    <h2>가전·TV</h2>
+                                </section>
+                            </li>
+                            <li>
+                                컴퓨터·노트북·조립PC
+                                <section>
+                                    <h2>컴퓨터·노트북·조립PC</h2>
+                                </section>
+                            </li>
+                            <li>
+                                태블릿·모바일·디카
+                                <section>
+                                    <h2>태블릿·모바일·디카</h2>
+                                </section>
+                            </li>
+                            <li>
+                                아웃도어·스포츠·골프
+                                <section>
+                                    <h2>아웃도어·스포츠·골프</h2>
+                                </section>
+                            </li>
+                            <li>
+                                자동차·용품·공구
+                                <section>
+                                    <h2>자동차·용품·공구</h2>
+                                </section>
+                            </li>
+                            <li>
+                                가구·조명
+                                <section>
+                                    <h2>가구·조명</h2>
+                                </section>
+                            </li>
+                            <li>
+                                식품·유아·완구
+                                <section>
+                                    <h2>식품·유아·완구</h2>
+                                </section>
+                            </li>
+                            <li>
+                                생활·주방·건강
+                                <section>
+                                    <h2>생활·주방·건강</h2>
+                                </section>
+                            </li>
+                            <li>
+                                패션·잡화·뷰티
+                                <section>
+                                    <h2>패션·잡화·뷰티</h2>
+                                </section>
+                            </li>
+                            <li>
+                                사무·취미·반려동물
+                                <section>
+                                    <h2>사무·취미·반려동물</h2>
+                                </section>
+                            </li>
+                            <li>
+                                여행·항공·호텔
+                                <section>
+                                    <h2>여행·항공·호텔</h2>
+                                </section>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+                <article>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Impedit sapiente eveniet aliquid officiis, molestiae quis,
+                    unde ducimus cumque recusandae dolorum expedita eaque qui
+                    illo minima quod fuga quidem odit quisquam.
+                </article>
+            </div>
+        </main>
+    </body>
+</html>

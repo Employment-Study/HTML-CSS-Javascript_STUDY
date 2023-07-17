@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>03-danawa.html</title>
+        <style>
+            .frame {
+                margin: auto;
+                width: 1260px;
+            }
+
+            .flex {
+                display: flex;
+            }
+
+            ul {
+                width: 350px;
+                display: flex;
+                list-style: none;
+                padding: 0;
+                justify-content: space-between;
+            }
+
+            .justify-content-end {
+                justify-content: end;
+            }
+
+            .justify-content-between {
+                justify-content: space-between;
+            }
+
+            .border-right {
+                border-right: 1px solid #dadada;
+            }
+
+            .fit-content {
+                width: fit-content;
+            }
+
+            .border {
+                border: 1px solid skyblue;
+                height: fit-content;
+                margin: auto;
+            }
+
+            input {
+                border: 0;
+                outline: 0;
+                background-color: white;
+                height: 20px;
+                font-size: 20px;
+                width: fit-content;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 
+        danawa.com의 주요 레이아웃을 간단히 구성하고
+        왼쪽 측면의 드랍다운 메뉴부분만 상세히 구현한다.
+    -->
+
+        <header>
+            <nav class="frame flex justify-content-end">
+                <ul>
+                    <li>에누리　|　</li>
+                    <li>몰테일　|　</li>
+                    <li>플레이오토　|　</li>
+                    <li>메이크샵</li>
+                </ul>
+            </nav>
+            <hr />
+            <div class="frame flex justify-content-between">
+                <div class="fit-content">
+                    <a href="#">
+                        <img
+                            src="https://img.danawa.com/new/danawa_main/v1/img/danawa_logo_main_brand.png"
+                        />
+                    </a>
+                </div>
+                <div class="search border">
+                    <input type="text" placeholder="검색어를 입력해주세요" />
+                    <input type="submit" value="a" />
+                </div>
+                <div>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+    </body>
+</html>
