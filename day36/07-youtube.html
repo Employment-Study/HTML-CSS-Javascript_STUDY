@@ -13,18 +13,23 @@
                 margin: auto;
             }
             .item {
-                margin: 0 20px;
+                margin: 20px 20px;
                 width: 350px;
                 height: 300px;
+                cursor: pointer;
             }
 
             .thumnail {
                 width: 350px;
                 height: 180px;
                 border-radius: 10px;
-
                 background-repeat: no-repeat;
                 background-size: 100%;
+            }
+
+            .item:hover > .thumnail {
+                border-radius: 0px;
+                transition-duration: 0.5s;
             }
 
             .details {
@@ -50,7 +55,7 @@
             }
 
             .title {
-                width: 280px;
+                width: 227px;
                 display: flex;
                 flex-wrap: wrap;
                 font-size: 16px;
@@ -64,7 +69,8 @@
                 width: 280px;
                 text-align: start;
                 font-size: 0.8em;
-                color: lightgrey;
+                font-weight: 700;
+                color: #777;
             }
 
             .uploader > div {
@@ -76,6 +82,43 @@
 
             .viewcount {
                 width: 100%;
+            }
+
+            .shorts {
+                border-top: 3px solid darkgray;
+                margin: auto;
+            }
+            .shorts > * {
+                margin: 10px 5px;
+            }
+
+            .shorts_container {
+                display: flex;
+                width: 1200px;
+                height: auto;
+                margin: auto;
+                justify-content: space-around;
+            }
+
+            .shorts_item {
+                margin-top: 10px;
+                width: 227px;
+                height: 520px;
+                cursor: pointer;
+            }
+
+            .shorts_detail {
+                margin-top: 10px;
+                width: 227px;
+                height: 110px;
+            }
+
+            .shorts_thumnail {
+                border-radius: 10px;
+                width: 227px;
+                height: 400px;
+                background-repeat: no-repeat;
+                background-size: 100%;
             }
         </style>
     </head>
@@ -164,10 +207,8 @@
                             등장 ㅋㅋㅋ
                         </div>
                         <div class="uploder">
-                            <div class="writer">Pair Piano</div>
-                            <div class="viewcount">
-                                조회수 10만회 · 7개월 전
-                            </div>
+                            <div class="writer">전스트</div>
+                            <div class="viewcount">조회수 8.7만회 · 2일전</div>
                         </div>
                     </div>
                 </div>
@@ -194,9 +235,39 @@
                             시간 지브리 메들리 피
                         </div>
                         <div class="uploder">
-                            <div class="writer">Pair Piano</div>
+                            <div class="writer">BGM Ghibli Studio</div>
                             <div class="viewcount">
                                 조회수 10만회 · 7개월 전
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div
+                    class="thumnail"
+                    style="
+                        background-image: url('https://i.ytimg.com/vi/ru-O5L2uxho/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_g6AArgIigIMCAAQARhGIGUoOTAP&rs=AOn4CLDoZoGvY9ycpnv58_99wdGcLxltJQ');
+                    "
+                >
+                    <img src="" alt="" />
+                </div>
+                <div class="details">
+                    <div class="profile">
+                        <img
+                            src="https://yt3.ggpht.com/ytc/AOPolaRdYZOSoMwGNGkHk2qoKVzvKTwjgCrZrGyQKlFomw=s68-c-k-c0x00ffffff-no-rj"
+                            alt=""
+                        />
+                    </div>
+                    <div class="title_uploader">
+                        <div class="title">
+                            [Piano ASMR] 3시간 연속듣기 | 빗소리와 함께 듣는
+                            피아노 |
+                        </div>
+                        <div class="uploder">
+                            <div class="writer">소디의 음악공방 Sody Music</div>
+                            <div class="viewcount">
+                                조회수 1796만회 · 3년 전
                             </div>
                         </div>
                     </div>
@@ -207,7 +278,7 @@
                 <div
                     class="thumnail"
                     style="
-                        background-image: url('https://i.ytimg.com/vi/3-87xFKbCHc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBevVVjvC8e56VMoQjV7tSQWnkt3g');
+                        background-image: url('https://i.ytimg.com/vi/Ngpml2aymCw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA0fMCbuCmVQPvIpnOeNqEMGMJfhA');
                     "
                 >
                     <img src="" alt="" />
@@ -221,43 +292,120 @@
                     </div>
                     <div class="title_uploader">
                         <div class="title">
-                            메이플 월드의 평화, 에레브의 고요한 정원 ASMR
+                            라디오 진행으로 살인마에게서 사람들을 구하는 공포
+                            스릴러 게임
                         </div>
                         <div class="uploder">
-                            <div class="writer">Pair Piano</div>
-                            <div class="viewcount">
-                                조회수 10만회 · 7개월 전
-                            </div>
+                            <div class="writer">풍월량</div>
+                            <div class="viewcount">조회수 3.7만회 · 1 일전</div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="item">
-                <div
-                    class="thumnail"
-                    style="
-                        background-image: url('https://i.ytimg.com/vi/3-87xFKbCHc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBevVVjvC8e56VMoQjV7tSQWnkt3g');
-                    "
-                >
-                    <img src="" alt="" />
-                </div>
-                <div class="details">
-                    <div class="profile">
-                        <img
-                            src="https://yt3.ggpht.com/AGeanIpQRF3rP38xR8aE_m9KmVM3S0hggpleUNp6E_RVELc0AFUJJG1RyIsVgMx4o23ii7GtzA=s68-c-k-c0x00ffffff-no-rj"
-                            alt=""
-                        />
-                    </div>
-                    <div class="title_uploader">
+        </div>
+        <div class="shorts container">
+            <icon-shape class="yt-spec-icon-shape"
+                ><div style="width: 100%; height: 100%; fill: currentcolor">
+                    <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        focusable="false"
+                        style="
+                            pointer-events: none;
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                        "
+                    >
+                        <g>
+                            <path
+                                d="M17.77,10.32l-1.2-.5L18,9.06a3.74,3.74,0,0,0-3.5-6.62L6,6.94a3.74,3.74,0,0,0,.23,6.74l1.2.49L6,14.93a3.75,3.75,0,0,0,3.5,6.63l8.5-4.5a3.74,3.74,0,0,0-.23-6.74Z"
+                                fill="red"
+                            ></path>
+                            <polygon
+                                points="10 14.65 15 12 10 9.35 10 14.65"
+                                fill="#fff"
+                            ></polygon>
+                        </g>
+                    </svg></div
+            ></icon-shape>
+            <h2>Shorts</h2>
+            <div class="shorts_container">
+                <div class="shorts_item">
+                    <div
+                        class="shorts_thumnail"
+                        style="
+                            background-image: url('https://i.ytimg.com/vi/hJehnc5pNL0/oar2.jpg?sqp=-oaymwEaCJUDENAFSFXyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLBwGmqwNb_TaL1FTE10fJdhmu-eSA');
+                        "
+                    ></div>
+                    <div class="shorts_detail">
                         <div class="title">
-                            메이플 월드의 평화, 에레브의 고요한 정원 ASMR
+                            고의사구의 중요성(Feat.오타니 35호 홈런) (07.18)
                         </div>
                         <div class="uploder">
-                            <div class="writer">Pair Piano</div>
-                            <div class="viewcount">
-                                조회수 10만회 · 7개월 전
-                            </div>
+                            <div class="viewcount">조회수 36회</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shorts_item">
+                    <div
+                        class="shorts_thumnail"
+                        style="
+                            background-image: url('https://i.ytimg.com/vi/gMvxsEpYkR4/hq720_2.jpg?sqp=-oaymwEdCJUDENAFSFXyq4qpAw8IARUAAIhCcAHAAQbQAQE=&rs=AOn4CLAsfOqOSlWnd3i1-kutmOkaNQmAUA');
+                        "
+                    ></div>
+                    <div class="shorts_detail">
+                        <div class="title">
+                            IT 분야 영향력 1위 유튜버 조코딩의 Q&A 3탄 | Do it!
+                            조...
+                        </div>
+                        <div class="uploder">
+                            <div class="viewcount">조회수 1천회</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shorts_item">
+                    <div
+                        class="shorts_thumnail"
+                        style="
+                            background-image: url('https://i.ytimg.com/vi/oJSh6QJ-XAE/hq720.jpg?sqp=-oaymwEdCJUDENAFSFXyq4qpAw8IARUAAIhCcAHAAQbQAQE=&rs=AOn4CLA0HG3akoBnrCC-nLQcRdK8cVh6TA');
+                        "
+                    ></div>
+                    <div class="shorts_detail">
+                        <div class="title">너는 내가 인정한다 (20230706)</div>
+                        <div class="uploder">
+                            <div class="viewcount">조회수 31만회</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shorts_item">
+                    <div
+                        class="shorts_thumnail"
+                        style="
+                            background-image: url('https://i.ytimg.com/vi/8H3nWTRgo_w/hq720.jpg?sqp=-oaymwEdCJUDENAFSFXyq4qpAw8IARUAAIhCcAHAAQbQAQE=&rs=AOn4CLBKiEr9kH1q0uJc-qZNbWnDTU2OUg');
+                        "
+                    ></div>
+                    <div class="shorts_detail">
+                        <div class="title">모기가 피 못 빨게 하는 법</div>
+                        <div class="uploder">
+                            <div class="viewcount">조회수 89만회</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shorts_item">
+                    <div
+                        class="shorts_thumnail"
+                        style="
+                            background-image: url('https://i.ytimg.com/vi/EEolr5iOzY4/oar2.jpg?sqp=-oaymwEaCJUDENAFSFXyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLCLZi2w8vLzvnshpHmnO7-Q2lBM_A');
+                        "
+                    ></div>
+                    <div class="shorts_detail">
+                        <div class="title">
+                            평법한 담임쌤이 전 농구선수 출신임이 밝혀지자...
+                        </div>
+                        <div class="uploder">
+                            <div class="viewcount">조회수 452만회</div>
                         </div>
                     </div>
                 </div>
