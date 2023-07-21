@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>02-appendChild.html</title>
+        <style>
+            .flex {
+                list-style: none;
+                padding-left: 0;
+                display: flex;
+            }
+
+            .flex > li {
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+
+            .flex-space-between {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .margin_auto {
+                font-size: 1.5rem;
+                font-weight: 700;
+                width: 1600px;
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>02-appendChild.html</h1>
+        <hr />
+
+        <div id="root"></div>
+
+        <script>
+            // let a = prompt("아무 글자나 입력해보세요");
+            // root
+            const root = document.getElementById("root");
+            // 스크립트로 생성한 HRMLElement
+            const nav = document.createElement("nav");
+            // menu1
+            const menu1 = document.createElement("ul");
+            const li01 = document.createElement("li");
+            const li02 = document.createElement("li");
+            const li03 = document.createElement("li");
+            const li04 = document.createElement("li");
+            const li05 = document.createElement("li");
+            // menu2
+            const menu2 = document.createElement("ul");
+            const li06 = document.createElement("li");
+            const li07 = document.createElement("li");
+
+            li01.innerText = a;
+            li02.innerText = "공간별 쇼핑하기";
+            li03.innerText = "특별한 가격";
+            li04.innerText = "홈 액세서리";
+            li05.innerText = "서비스";
+            li06.innerText = "우편번호 입력";
+            li07.innerText = "매장 선택";
+
+            menu1.appendChild(li01); // <ul><li>모든 제품</li></ul>
+            menu1.appendChild(li02); // <ul><li>모든 제품</li><li>공간별 쇼핑하기</li></ul>
+            menu1.appendChild(li03);
+            menu1.appendChild(li04);
+            menu1.appendChild(li05);
+            menu2.appendChild(li06);
+            menu2.appendChild(li07);
+
+            menu1.classList.add("flex"); // <ul class="flex"> ... </ul>
+            menu2.classList.add("flex");
+
+            nav.appendChild(menu1);
+            nav.appendChild(menu2);
+
+            nav.classList.add("flex-space-between");
+
+            root.appendChild(nav);
+
+            root.classList.add("margin_auto");
+
+            // menu2 안에 '우편번호 입력'과 '매장 선택' 항목을 추가하여
+            // 양쪽으로 펼쳐질 수 있도록 코드를 작성해보세요
+        </script>
+    </body>
+</html>

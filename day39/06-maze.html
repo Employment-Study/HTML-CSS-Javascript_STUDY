@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>06-maze.html</title>
+        <style>
+            #root {
+                width: 500px;
+                height: 500px;
+                border: 3px solid black;
+                position: relative;
+            }
+
+            .item {
+                box-sizing: border-box;
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-image: url("image/짱아.png");
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                transition-duration: 0.5s;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>06-maze.html</h1>
+        <hr />
+
+        <div id="root">
+            <div class="item" style="top: 0; left: 0"></div>
+        </div>
+
+        <script>
+            const item = document.querySelector(".item");
+            let square = prompt("몇칸짜리 맵을 쓰시겠습니까?? (N X N) :");
+            const root = document.getElementById("root");
+
+            if (square == "") {
+                square = "5";
+            }
+
+            root.style.width = +square * 100 + "px";
+            root.style.height = +square * 100 + "px";
+
+            function keyHandler(event) {
+                root.style.backgroundColor = "white";
+                switch (event.key) {
+                    case "ArrowRight":
+                        // 문자열이 숫자로 구성되었을 때, 앞에 + 기호를 붙이면 숫자형이 된다.
+                        const currentLeft = +item.style.left.replace("px", "");
+                        if (currentLeft > +(square - 2) * 100) {
+                            root.style.backgroundColor = "red";
+                            break;
+                        } else {
+                            item.style.left = currentLeft + 100 + "px";
+                        }
+                        break;
+                    case "ArrowLeft":
+                        const currentRight = +item.style.left.replace("px", "");
+                        if (currentRight < 100) {
+                            root.style.backgroundColor = "red";
+                            break;
+                        } else {
+                            item.style.left = currentRight - 100 + "px";
+                        }
+                        break;
+                    case "ArrowDown":
+                        const currentDown = +item.style.top.replace("px", "");
+
+                        if (currentDown > +(square - 2) * 100) {
+                            root.style.backgroundColor = "red";
+                            break;
+                        } else {
+                            item.style.top = currentDown + 100 + "px";
+                        }
+                        break;
+                    case "ArrowUp":
+                        const currentUp = +item.style.top.replace("px", "");
+                        if (currentUp < 100) {
+                            root.style.backgroundColor = "red";
+                            break;
+                        } else {
+                            item.style.top = currentUp - 100 + "px";
+                        }
+                        break;
+                }
+            }
+            document.onkeydown = keyHandler;
+
+            /*
+            function keyHandler2(event) {
+                let nextLeft = +item.style.left.replace("px", "");
+                let nextTop = +item.style.top.replace("px", "");
+                switch (event.key) {
+                    case "ArrowRight":
+                        nextLeft += 100;
+                        break;
+                    case "ArrowLeft":
+                        nextLeft -= 100;
+                        break;
+                    case "ArrowDown":
+                        nextTop += 100;
+                        break;
+                    case "ArrowUp":
+                        nextTop -= 100;
+                        break;
+                }
+
+                console.log({
+                    top: nextTop,
+                    left: nextLeft
+                })
+                if(nextLeft<0 || 400< nextLeft || nextTop < 0 || 400 < nextTop) {
+                    return
+                }
+
+                item.style.left = nextLeft + 'px'
+                item.style.top = nextTop + 'px'
+            }
+            document.onkeydown = keyHandler2;
+            */
+        </script>
+    </body>
+</html>

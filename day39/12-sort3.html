@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>12-sort3.html</title>
+        <style>
+            #sort {
+                width: fit-content;
+                margin: auto;
+                margin-bottom: 20px;
+            }
+
+            #sort > button {
+                font-size: 16px;
+                padding: 10px;
+                outline: 0;
+                border-radius: 20px;
+                border: 1px solid lightskyblue;
+                background-color: lightskyblue;
+                color: white;
+                font-weight: 700;
+                box-shadow: 2px 2px 16px 3px black;
+                cursor: pointer;
+            }
+
+            #sort > button:hover {
+                background-color: lightcoral;
+                border: 1px solid lightcoral;
+            }
+            table {
+                border-collapse: collapse;
+                margin: auto;
+                border: 2px solid black;
+                border-radius: 20px;
+            }
+
+            th,
+            td {
+                padding: 10px;
+                border: 1px solid grey;
+                border-radius: 20px;
+            }
+            ul {
+                list-style: none;
+                padding: 0px;
+                display: flex;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>12-sort3.html</h1>
+        <hr />
+
+        <div id="sort">
+            <button>상품명 오름차순 정렬</button>
+            <button>상품명 내림차순 정렬</button>
+            <button>가격 오름차순 정렬</button>
+            <button>가격 내림차순 정렬</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>이미지</th>
+                    <th>상품명</th>
+                    <th>가격</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="image/사과1.jpg" alt="" /></td>
+                    <td>초록사과 5-8입(봉)</td>
+                    <td>9,990원</td>
+                </tr>
+                <tr>
+                    <td><img src="image/사과2.jpg" alt="" /></td>
+                    <td>유명산지 사과(충주, 문경, 거창, 영주) 4-6입 (봉)</td>
+                    <td>12,990원</td>
+                </tr>
+                <tr>
+                    <td><img src="image/사과3.jpg" alt="" /></td>
+                    <td>맛이 예쁜 사과 1.8kg(봉)</td>
+                    <td>14,900원</td>
+                </tr>
+                <tr>
+                    <td><img src="image/사과4.jpg" alt="" /></td>
+                    <td>[착한식탁]바른 세척 아오리 사과 2kg 꼬마소과</td>
+                    <td>10,500원</td>
+                </tr>
+                <tr>
+                    <td><img src="image/사과5.jpg" alt="" /></td>
+                    <td>
+                        [산지 직송][착한식탁]바른 세척 아오리 사과 2.5kg 소과
+                    </td>
+                    <td>13,900원</td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            const nameAsc = document.querySelector("#sort button:nth-child(1)");
+            const tbody = document.querySelector("tbody");
+            const nameDesc = document.querySelector(
+                "#sort button:nth-child(2) "
+            );
+            const priceAsc = document.querySelector(
+                "#sort button:nth-child(3) "
+            );
+            const priceDesc = document.querySelector(
+                "#sort button:nth-child(4) "
+            );
+            const itemArray = Array.from(
+                document.querySelectorAll("tbody > tr")
+            );
+
+            nameAsc.onclick = function () {
+                itemArray.sort((a, b) => {
+                    const ta = a.querySelector("td:nth-child(2)").innerText;
+                    const tb = b.querySelector("td:nth-child(2)").innerText;
+                    return ta > tb ? 1 : -1;
+                });
+                itemArray.forEach((item) => tbody.appendChild(item));
+            };
+
+            nameDesc.onclick = function () {
+                itemArray.sort((a, b) => {
+                    const ta = a.querySelector("td:nth-child(2)").innerText;
+                    const tb = b.querySelector("td:nth-child(2)").innerText;
+                    return ta < tb ? 1 : -1;
+                });
+                itemArray.forEach((item) => tbody.appendChild(item));
+            };
+
+            priceAsc.onclick = function () {
+                itemArray.sort((a, b) => {
+                    const ta = +a
+                        .querySelector("td:nth-child(3)")
+                        .innerText.replace(",", "")
+                        .replace("원", "");
+                    const tb = +b
+                        .querySelector("td:nth-child(3)")
+                        .innerText.replace(",", "")
+                        .replace("원", "");
+                    return ta - tb;
+                });
+                itemArray.forEach((item) => tbody.appendChild(item));
+            };
+
+            priceDesc.onclick = function () {
+                itemArray.sort((a, b) => {
+                    const ta = +a
+                        .querySelector("td:nth-child(3)")
+                        .innerText.replace(",", "")
+                        .replace("원", "");
+                    const tb = +b
+                        .querySelector("td:nth-child(3)")
+                        .innerText.replace(",", "")
+                        .replace("원", "");
+
+                    return tb - ta;
+                });
+                itemArray.forEach((item) => tbody.appendChild(item));
+            };
+        </script>
+    </body>
+</html>

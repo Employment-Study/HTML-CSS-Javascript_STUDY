@@ -399,6 +399,24 @@
             margin: auto;
             overflow-x: scroll;
         }
+
+        .footer::-webkit-scrollbar {
+            height: 10px;
+            background-color: black;
+        }
+
+        .footer::-webkit-scrollbar-thumb {
+        background-color: #2f3542;
+        }
+        .footer::-webkit-scrollbar-track {
+            background-color: grey;
+        }
+
+        .item > div {
+            font-size: 0.9em;
+            font-weight: 700;
+        }
+
         </style>
     </head>
     <body>
@@ -418,9 +436,9 @@
                         ><input type="text" placeholder="검색어 입력" />
                         <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="svg-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.002 13a4 4 0 11-8 0 4 4 0 018 0zm-2 0a2 2 0 11-4 0 2 2 0 014 0z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M9.443 4L7.586 7H3v13h18V7h-4.586l-1.857-3H9.443zm1.114 2h2.886L15.3 9H19v9H5V9h3.7l1.857-3z" fill="currentColor"></path></svg></i>
                     </div>
-                    <div class="authBtn">Hej! 로그인 또는 가입하기</div>
+                    <div class="authBtn"><i class="fa-regular fa-user fa-xs"></i> Hej! 로그인 또는 가입하기</div>
                     <div class="like"><i class="fa-solid fa-heart fa-xs"></i></div>
-                    <div class="bestSeller">⛵</div>
+                    <div class="bestSeller"><i class="fa-solid fa-sailboat"></i></div>
                 </div>
                 <div class="header_bottom">
                     <div class="menu1">
