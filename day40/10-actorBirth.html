@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>10-actorBirth.html</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                margin: auto;
+            }
+            th,
+            td {
+                border: 1px solid black;
+                padding: 10px;
+            }
+
+            #root {
+                width: 600px;
+                margin: auto;
+                margin-bottom: 40px;
+            }
+
+            #root > button {
+                font-size: 16px;
+                padding: 10px;
+                outline: 0;
+                border-radius: 20px;
+                border: 1px solid blue;
+                background-color: blue;
+                color: white;
+                font-weight: 700;
+                box-shadow: 2px 2px 16px 3px black;
+                cursor: pointer;
+            }
+
+            #search {
+                width: 600px;
+                display: flex;
+                margin: auto;
+                margin-bottom: 40px;
+            }
+
+            #search > input[id="keyword"] {
+                width: 400px;
+                font-size: 1.5rem;
+            }
+
+            #search > input[id="button"] {
+                outline: 0;
+                border: 0;
+                font-size: 1.5rem;
+                border-radius: 20px;
+                background-color: blue;
+                color: white;
+                font-weight: 700;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>10-actorBirth.html</h1>
+        <hr />
+        <div id="root">
+            <button id="init">초기화</button>
+            <button id="nameAsc">이름오름차순</button>
+            <button id="nameDesc">이름내림차순</button>
+            <button id="birthAsc">생일오름차순</button>
+            <button id="birthDesc">생일내림차순</button>
+        </div>
+        <div id="search">
+            <input type="text" id="keyword" placeholder="검색어" />
+            <input type="submit" id="button" value="검색" />
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>생년월일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th><img src="loading.gif" alt="" /></th>
+                </tr>
+            </tbody>
+        </table>
+
+        <script src="actorBirth.js"></script>
+        <script>
+            console.log("arr의 길이 : ", arr.length);
+            const nameAsc = document.querySelector("#nameAsc");
+            const nameDesc = document.querySelector("#nameDesc");
+            const birthAsc = document.querySelector("#birthAsc");
+            const birthDesc = document.querySelector("#birthDesc");
+            const init = document.querySelector("#init");
+            const keyword = document.querySelector("#keyword");
+            const searchbutton = document.querySelector("#button");
+
+            let count = 0;
+            const tbody = document.querySelector("tbody");
+            tbody.innerHTML = "";
+            let tag = ``;
+
+            searchbutton.onclick = function () {
+                count = 0;
+                tbody.innerHTML = "";
+                tag = ``;
+                const key = keyword.value;
+                arr.forEach((e) => {
+                    if (e.name.includes(key) || e.birth.includes(key)) {
+                        count += 1;
+                        tag += `<tr>`;
+                        tag += `<td>${count}</td>`;
+                        tag += `<td>${e.name}</td>`;
+                        tag += `<td>${e.birth}</td>`;
+                        tag += `</tr>`;
+                    }
+                });
+                tbody.innerHTML += tag;
+            };
+
+            // 전체(초기화)
+            const arr1 = arr;
+            arr1.forEach((e) => {
+                count += 1;
+                tag += `<tr>`;
+                tag += `<td>${count}</td>`;
+                tag += `<td>${e.name}</td>`;
+                tag += `<td>${e.birth}</td>`;
+                tag += `</tr>`;
+            });
+            tbody.innerHTML += tag;
+            init.onclick = function () {
+                history.go(0);
+            };
+            nameAsc.onclick = function () {
+                count = 0;
+                tbody.innerHTML = "";
+                tag = ``;
+                const arr2 = arr.sort((a, b) => {
+                    return a.name > b.name ? 1 : -1;
+                });
+                arr1.forEach((e) => {
+                    count += 1;
+                    tag += `<tr>`;
+                    tag += `<td>${count}</td>`;
+                    tag += `<td>${e.name}</td>`;
+                    tag += `<td>${e.birth}</td>`;
+                    tag += `</tr>`;
+                });
+                tbody.innerHTML += tag;
+            };
+
+            nameDesc.onclick = function () {
+                count = 0;
+                tbody.innerHTML = "";
+                tag = ``;
+                const arr3 = arr.sort((a, b) => {
+                    return a.name < b.name ? 1 : -1;
+                });
+                arr3.forEach((e) => {
+                    count += 1;
+                    tag += `<tr>`;
+                    tag += `<td>${count}</td>`;
+                    tag += `<td>${e.name}</td>`;
+                    tag += `<td>${e.birth}</td>`;
+                    tag += `</tr>`;
+                });
+                tbody.innerHTML += tag;
+            };
+
+            birthAsc.onclick = function () {
+                count = 0;
+                tbody.innerHTML = "";
+                tag = ``;
+                const arr4 = arr.sort((a, b) => {
+                    return a.birth > b.birth ? 1 : -1;
+                });
+                arr3.forEach((e) => {
+                    count += 1;
+                    tag += `<tr>`;
+                    tag += `<td>${count}</td>`;
+                    tag += `<td>${e.name}</td>`;
+                    tag += `<td>${e.birth}</td>`;
+                    tag += `</tr>`;
+                });
+                tbody.innerHTML += tag;
+            };
+
+            birthDesc.onclick = function () {
+                count = 0;
+                tbody.innerHTML = "";
+                tag = ``;
+                const arr5 = arr.sort((a, b) => {
+                    return a.birth < b.birth ? 1 : -1;
+                });
+                arr3.forEach((e) => {
+                    count += 1;
+                    tag += `<tr>`;
+                    tag += `<td>${count}</td>`;
+                    tag += `<td>${e.name}</td>`;
+                    tag += `<td>${e.birth}</td>`;
+                    tag += `</tr>`;
+                });
+                tbody.innerHTML += tag;
+            };
+        </script>
+    </body>
+</html>

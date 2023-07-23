@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>08-innerHTML.html</title>
+    </head>
+    <body>
+        <h1>08-innerHTML.html</h1>
+        <hr />
+
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <th>이미지</th>
+                <th>상품명</th>
+                <th>가격</th>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <script>
+            const arr = [
+                {
+                    image: "homeplus/사과1.jpg",
+                    name: "초록사과 5-8입(봉)",
+                    price: 9900,
+                },
+
+                {
+                    image: "homeplus/사과2.jpg",
+                    name: "유명산지 사과(충주, 문경, 거창, 영주) 4-6입 (봉)",
+                    price: 12990,
+                },
+
+                {
+                    image: "homeplus/사과3.jpg",
+                    name: "맛이 예쁜 사과 1.8kg(봉)",
+                    price: 14900,
+                },
+
+                {
+                    image: "homeplus/사과4.jpg",
+                    name: "[착한식탁]바른 세척 아오리 사과 2kg 꼬마소과",
+                    price: 10500,
+                },
+
+                {
+                    image: "homeplus/사과5.jpg",
+                    name: "[산지 직송][착한식탁]바른 세척 아오리 사과 2.5kg 소과",
+                    price: 13900,
+                },
+            ];
+
+            const tbody = document.querySelector("tbody");
+
+            // for (let i = 0; i < arr.length; i++) {
+            //     const ob = arr[i];
+            //     let tag = ``;
+            //     tag += `<tr>`;
+            //     tag += `    <td><img src="${ob.image}" width="120"></td>`;
+            //     tag += `    <td>${ob.name}</td>`;
+            //     tag += `    <td>${ob.price}원</td>`;
+            //     tag += `</tr>`;
+            //     tbody.innerHTML += tag;
+            // }
+
+            arr.forEach((ob) => {
+                let tag = ``;
+                tag += `<tr>`;
+                tag += `    <td><img src="${ob.image}" width="120"></td>`;
+                tag += `    <td>${ob.name}</td>`;
+                tag += `    <td>${ob.price}원</td>`;
+                tag += `</tr>`;
+                tbody.innerHTML += tag;
+            });
+
+            // arr.forEach((ob) => {console.log(ob)})
+            // arr.sort((a,b) => { a -b })
+            // arr.map((ob) => {ob.name})
+            // arr.filter((ob) => {ob.price >= 10000})
+        </script>
+    </body>
+</html>
