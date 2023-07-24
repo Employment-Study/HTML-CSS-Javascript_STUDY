@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>02-homeplus.html</title>
+        <style>
+            .container {
+                font-size: 20px;
+                font-weight: 700;
+            }
+            table {
+                margin: auto;
+                border-collapse: collapse;
+                border: 2px solid black;
+            }
+
+            th {
+                background-color: lightskyblue;
+            }
+
+            th:hover {
+                background-color: blue;
+                color: white;
+                cursor: pointer;
+            }
+
+            th,
+            td {
+                padding: 10px;
+                border: 1px solid black;
+            }
+
+            tbody > tr:hover {
+                background-color: #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <table>
+                <h1>01-homeplus.html</h1>
+                <hr />
+                <thead>
+                    <tr>
+                        <th class="name">상품이름</th>
+                        <th class="price">가격</th>
+                        <th class="salesCount">판매건수</th>
+                        <th class="grade">점수</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <script src="./homeplus(berry).js"></script>
+        <script>
+            // arr의 내용을 문서에 반영하기
+            const tbody = document.querySelector("tbody");
+            function loadHandler() {
+                let tag = ``;
+                arr.forEach((e) => {
+                    tag += `<tr>`;
+                    tag += `<td class="name">${e.name}</td>`;
+                    tag += `<td class="price">${e.price}</td>`;
+                    tag += `<td class="salesCount">${e.salesCount}</td>`;
+                    tag += `<td class="grade">${e.grade}</td>`;
+                    tag += `</tr>`;
+                });
+                tbody.innerHTML += tag;
+            }
+            window.onload = loadHandler;
+
+            // th를 클릭하면 각 클래스의 이름을 기준으로 정렬하기
+            const thList = document.querySelectorAll("th");
+            function sortHandler(event) {
+                const className = event.target.className;
+                const trArray = Array.from(
+                    document.querySelectorAll("tbody > tr")
+                );
+                trArray.sort((a, b) => {
+                    let valueA = a.querySelector("." + className).innerText;
+                    let valueB = a.querySelector("." + className).innerText;
+                    if (className != "name") {
+                        valueA = +valueA;
+                        valueB = +valueB;
+                    }
+                    let result = valueA > valueB ? 1 : -1;
+                    return result;
+                });
+                trArray.forEach((tr) => tbody.appendChild(tr));
+            }
+            thList.forEach((th) => (th.onclick = sortHandler));
+        </script>
+    </body>
+</html>
