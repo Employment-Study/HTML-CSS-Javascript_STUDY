@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            #root {
+                width: 800px;
+                margin: 50px auto;
+            }
+
+            .wrap {
+                width: 800px;
+                display: flex;
+                flex-flow: wrap;
+            }
+
+            .item {
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                font-size: 30px;
+                font-weight: bold;
+                border: 1px solid grey;
+                margin: 5px;
+                padding: 10px;
+            }
+
+            button {
+                font-size: 2rem;
+                margin: 5px;
+                outline: none;
+                border: none;
+                border-radius: 10px;
+                background-color: chartreuse;
+                cursor: pointer;
+            }
+
+            #filter {
+                width: 800px;
+                margin: 20px auto;
+                text-align: center;
+            }
+        </style>
+        <title>01-filter.html</title>
+    </head>
+    <body>
+        <h1>01-filter.html</h1>
+        <hr />
+        <div id="filter">
+            <label for=""><input type="checkbox" id="plus" />양수</label>
+            <label for=""><input type="checkbox" id="minus" />음수</label>
+            <label for=""><input type="checkbox" id="odd" />홀수</label>
+            <label for=""><input type="checkbox" id="even" />짝수</label>
+        </div>
+        <div id="root">
+            <div class="wrap"></div>
+            <button id="refresh">리셋</button>
+        </div>
+
+        <script>
+            const refresh = document.querySelector("#refresh");
+            refresh.onclick = function () {
+                history.go(0);
+            };
+            function getRandomInt(min, max) {
+                const v1 = Math.ceil(min);
+                const v2 = Math.floor(max);
+                return Math.floor(Math.random() * (v2 - v1 + 1)) + v1;
+            }
+
+            const arr = [];
+            // 랜덤 정수 27개를 뽑아서 div.item 형식으로 화면에 추가하는 함수
+            function loadHandler() {
+                let tag = ``;
+                for (let i = 0; i < 27; i++) {
+                    const num = getRandomInt(-50, 50);
+                    arr.push(num);
+                    tag += `<div class="item">${num}</div>`;
+                }
+                document.querySelector(".wrap").innerHTML += tag;
+                console.log(arr);
+            }
+            // 체크박스를 체크하면 실행되는 이벤트 함수
+            const plus = document.getElementById("plus");
+            const minus = document.getElementById("minus");
+            const even = document.getElementById("even");
+            const odd = document.getElementById("odd");
+
+            plus.onclick = function (event) {
+                console.log("plus : " + event.target.checked);
+                const flag = event.target.checked;
+                const result = arr.filter((num) => num > 0);
+                let tag = "";
+                const target = flag ? result : arr;
+                target.forEach(
+                    (num) => (tag += `<div class="item">${num}</div>`)
+                );
+                document.querySelector(".wrap").innerHTML = "";
+                document.querySelector(".wrap").innerHTML += tag;
+            };
+
+            minus.onclick = function (event) {
+                console.log("minus : " + event.target.checked);
+                const flag = event.target.checked;
+                const result = arr.filter((num) => num < 0);
+                let tag = "";
+                const target = flag ? result : arr;
+                target.forEach(
+                    (num) => (tag += `<div class="item">${num}</div>`)
+                );
+                document.querySelector(".wrap").innerHTML = "";
+                document.querySelector(".wrap").innerHTML += tag;
+            };
+
+            const checkBoxList = document.querySelectorAll(
+                'input[type="checkbox"]'
+            );
+            function checkboxHandler(event) {
+                console.log(event.target.id);
+                const boxArray = Array.from(checkBoxList);
+                const flag = boxArray
+                    .filter((box) => box.checked));
+                checkBoxList.forEach((box) => (box.onclick = checkboxHandler));
+                const result = arr.filter((num) => {
+                    const flag1 = num > 0;
+                    const flag2 = num < 0;
+                    const flag3 = num % 2 != 0;
+                    const flag4 = num % 2 == 0;
+
+                    let f = true
+                    if(flag[0]) f = f && flag1
+                    if(flag[1]) f = f && flag2
+                    if(flag[2]) f = f && flag3
+                    if(flag[3]) f = f && flag4
+                    return f
+                });
+                document.querySelector(".wrap").innerHTML = "";
+                let tag = ``;
+                result.forEach(num => tag += `<div class="item">${num}</div>`)
+                document.querySelector(".wrap").innerHTML += tag;
+            }
+            checkBoxList.forEach(box=>box.onclick = checkboxHandler)
+
+            window.onload = loadHandler;
+        </script>
+    </body>
+</html>

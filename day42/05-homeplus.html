@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>04-homeplus.html</title>
+        <style>
+            .filter {
+                width: 800px;
+                margin: 20px auto;
+                text-align: center;
+            }
+            table {
+                border: 2px solid black;
+                border-collapse: collapse;
+                margin: auto;
+            }
+
+            th {
+                background-color: #eee;
+            }
+
+            td,
+            th {
+                border: 1px solid black;
+                padding: 10px;
+            }
+
+            .strawberry {
+                background-color: red;
+                color: white;
+            }
+
+            .blueberry {
+                background-color: blueviolet;
+                color: white;
+            }
+
+            .cherry {
+                background-color: hotpink;
+                color: white;
+            }
+
+            .etc {
+                background-color: green;
+                color: white;
+            }
+
+            .hidden {
+                display: none;
+            }
+
+            .hidden2 {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>05-homeplus.html</h1>
+        <hr />
+
+        <div class="filter" id="categoryFilter">
+            <label for=""><input type="checkbox" id="strawberry" />딸기</label>
+            <label for=""
+                ><input type="checkbox" id="blueberry" />블루베리</label
+            >
+            <label for=""><input type="checkbox" id="cherry" />체리</label>
+            <label for=""><input type="checkbox" id="etc" />기타</label>
+        </div>
+
+        <div class="filter" id="priceFilter">
+            <label for=""
+                ><input type="checkbox" start="0" id="u10th" />0~10000</label
+            >
+            <label for=""
+                ><input type="checkbox" start="10000" id="o10th" />10000~</label
+            >
+            <label for=""
+                ><input type="checkbox" start="20000" id="u20th" />20000</label
+            >
+            <label for=""
+                ><input type="checkbox" start="30000" id="u30th" />30000</label
+            >
+            <label for=""
+                ><input type="checkbox" start="40000" id="u40th" />40000~</label
+            >
+            <label for=""
+                ><input type="checkbox" start="50000" id="u50th" />50000~</label
+            >
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th class="name">상품이름</th>
+                    <th class="category">카테고리</th>
+                    <th class="price">가격</th>
+                    <th class="grade">평점</th>
+                    <th class="salesCount">판매수</th>
+                    <th class="reviewCount">리뷰 횟수</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <script src="./homeplus(berry).js"></script>
+        <script>
+            // 전체 데이터 준비
+            const dataList = arr.map((ob) => {
+                // JSON.stringify(ob) : ob객체를 JSON형식 문자열로 변환한다.
+                // JSON.parse(str) : str을 JSON형식 기준으로 객체로 변환한다.
+                const ob2 = JSON.parse(JSON.stringify(ob));
+                if (ob2.name.includes("블루베리")) ob2.category = "블루베리";
+                else if (ob2.name.includes("딸기")) ob2.category = "딸기";
+                else if (ob2.name.includes("체리")) ob2.category = "체리";
+                else ob2.category = "기타";
+                return ob2;
+            });
+
+            // 문서 로드시 작동하는 최초 작동
+            function loadHandler() {
+                const tbody = document.querySelector("tbody");
+                let tag = "";
+                const fruit = {
+                    딸기: "strawberry",
+                    블루베리: "blueberry",
+                    체리: "cherry",
+                    기타: "etc",
+                };
+                dataList.forEach((ob) => {
+                    tag += `<tr class="${fruit[ob.category]}">`;
+                    tag += `<td>${ob.name}</td>`;
+                    tag += `<td>${ob.category}</td>`;
+                    tag += `<td>${ob.price}</td>`;
+                    tag += `<td>${ob.grade}</td>`;
+                    tag += `<td>${ob.salesCount}</td>`;
+                    tag += `<td>${ob.reviewCount}</td>`;
+                    tag += `</td>`;
+                });
+                tbody.innerHTML += tag;
+            }
+
+            window.onload = loadHandler;
+
+            const cetegoryBoxArray = Array.from(
+                document.querySelectorAll(
+                    '#categoryFilter input[type="checkbox"]'
+                )
+            );
+
+            function filterHandler(event) {
+                const checkedBoxes = cetegoryBoxArray
+                    .filter((box) => box.checked)
+                    .map((box) => box.id);
+                console.log(checkedBoxes);
+
+                document.querySelectorAll("tbody   tr").forEach((tr) => {
+                    const flag = checkedBoxes.includes(tr.classList[0]);
+                    if (checkedBoxes.length == 0) tr.classList.remove("hidden");
+                    else if (flag) tr.classList.remove("hidden");
+                    else tr.classList.add("hidden");
+                });
+            }
+            cetegoryBoxArray.forEach((box) => (box.onclick = filterHandler));
+
+            //############################################################################
+
+            const priceBoxArray = Array.from(
+                document.querySelectorAll('#priceFilter input[type="checkbox"]')
+            );
+
+            function priceFilterHandler(event) {
+                const startBoxes = priceBoxArray
+                    .filter((box) => box.checked)
+                    .map((box) => +box.getAttribute("start"));
+                console.log(startBoxes);
+                document.querySelectorAll("tbody > tr").forEach((tr) => {
+                    const price =
+                        +tr.querySelector("td:nth-child(3)").innerText;
+                    console.log(price);
+                    const flag =
+                        startBoxes
+                            .map(
+                                (st) =>
+                                    st <= price &&
+                                    price < st + (st == 50000 ? st * 10 : 0)
+                            )
+                            .filter((bo) => bo).length != 0;
+                    if (startBoxes.length == 0) tr.classList.remove("hidden2");
+                    else if (flag) tr.classList.remove("hidden2");
+                    else tr.classList.add("hidden2");
+                });
+            }
+            priceBoxArray.forEach((box) => (box.onclick = priceFilterHandler));
+        </script>
+    </body>
+</html>
