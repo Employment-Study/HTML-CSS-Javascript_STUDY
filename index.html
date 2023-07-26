@@ -3,441 +3,521 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Macdonald</title>
+    <title>IT/과학 홈: 네이버 뉴스</title>
     <style>
         html{
-            scroll-behavior: smooth;
+            font-size: 10px;
+            margin: 0;
+            padding: 0;
         }
-        header{
-            width: 2100px;
+        .sb{
             display: flex;
-            box-sizing: border-box;
-            height: 140px;
-            justify-content: space-around;
-            align-items: center;
-            background-color: white;
-            position: fixed;
-            top: 0;
-            min-width:1240px;
+            justify-content: space-between;
         }
         .flex{
             display: flex;
         }
-        .hidden{
-            display: none;
+        .TopLogo{
+            display: inline-block;
+            background-image: url('https://ssl.pstatic.net/static.news/image/news/2022/11/08/sp_retina.png');
+            background-repeat: no-repeat;
+            background-size: 164px 115px;
+            width: 30px;
+            height: 30px;
+            background-position: -137px -86px;
+            vertical-align: top;
         }
         
-        ul:first-child > li:first-child img{
-            height: fit-content;
+        .NewsName{
+            background-image:url('https://ssl.pstatic.net/static.news/image/news/2022/11/08/sp_retina.png') ;
+            display: inline-block;
+            vertical-align: top;
+            width: 48px;
+            height: 24px;
+            background-position: 0px -207px;
+            background-size: 195px 115px;
         }
-        ul{
-            list-style: none;   
-            padding: 0;
+        .blind{
+            visibility: hidden;
+            border: 1px solid black;
+        }
+        .frame{
+            width: 1080px;
+            margin: 0 auto;
+        }
+        #TopBox{
+            width: 100%;
+            min-width: 1080px;
+            height: 52px;
+            background-color: #3f63bf;
+        }
+
+        #BlueTop{
+            background-color: #3f63bf;
+            height: 52px;
+            margin: auto;
             align-items: center;
         }
-        li{
-            font-size: 20px;
-            font-weight: bold;
+        ul{
+            margin: 0;
+            display: flex;
+            list-style: none;
+            text-align: center;
+            align-items: center;
+            padding-left: 10px;
         }
+        
         a{
             text-decoration: none;
             color: inherit;
         }
-        div:nth-child(2)  li:nth-child(1) > a{
-            background-color: #db0007;
-            border-radius: 48px; 
-            font-family: sans-serif;
-        }
-        div:nth-child(2)  li:nth-child(2) > a{
-            background-color: #d87e00;
-            border-radius: 48px; 
-            
-        }
-        div:nth-child(2)  li:nth-child(3) > a{
-            background-color: #264a36;
-            border-radius: 48px; 
-            
-        }
-        div:nth-child(2) button{
-            all: unset;
-            padding-left: 10px;
-            font-size: 2.5em;
-            line-height: 25%;
-        }
-        .Topbutton{
-            font-weight: bold;
+        .TopMenuName{
             color: white;
-            height: 34px;
-            font-size: 13px;
-            line-height: 34px;
-            padding: 10px 15px;
-            margin-right: 5px;
+            font-size: 2em;
+            opacity: 0.5;
         }
-        #menu{
-            margin-left: 350px;
-            box-sizing: border-box;
+        .bar{
+            font-size: 2em;
+            opacity: 0.3;
+            padding: 0 5px;
         }
-        #menu li{
-            height: 140px;
-            line-height: 140px;
-            margin-right: 85px;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
+        .bell{
+            background-image: url('https://ssl.pstatic.net/static/common/gnb/one/sp_gnb_v15.png?v=2006');
+            width: 17px;
+            height: 19px;
+            background-position: -220px -140px;
+            display: block;
         }
-        #menu  li:hover{
-            cursor: pointer;
-            border-bottom: 4px solid #d87e00;
-        }
-        
-        #function{
-            box-sizing: border-box;
-            margin-right: 500px;
-        }
-        #banner{
-            width: 1900px;
-            margin: 0;
-            margin: auto;
-            height: 540px;
-        }
-        #banner img{
+        #Menubar{
             width: 100%;
-            height: 540px;
-            min-width: 1600px;
-        }
-        .frame{
-            padding: 0;
+            line-height: 46px;
+            position: relative;
             margin: 0 auto;
-            width: 1168px;
-        }
-        h2{
-            font-size: 40px;
-            margin-bottom: 60px;
-            line-height: 1;
-        }
-        article{
-            display: flex;
-            flex-flow: wrap;
-        }
-        .item{
-            box-sizing: border-box;
-            width: 366px;
-            height: 438px;
-            border-radius: 20px;
-            margin: 11px;
-            box-shadow: 0 3px 4px rgba(0,0,0,.1);
-        
-        }
-        .itemTop > img{
-            border-radius: 20px 20px 0 0;
-
-        }
-        .itembottom{
-            padding: 24px 30px;
-        }
-        p{
             padding: 0;
+            font-size: 1.2em;
+            height: 46px;
+            box-sizing: border-box;
+            border-bottom: 1px solid black;
+        }
+        #MenuBox{
+            height: 46px;
+            margin: auto;
+        }
+        #MenuBox ul{
             margin: 0;
-            margin-bottom: 10px;
+        }
+        #MenuBox li{
+            font-size: 1.2em;
+            font-weight: bold;
+            padding-right: 24px;
+        }
+        #void{
+            height: 80px;
+            visibility: hidden;
+        }
+        #overMain{
+            height: 26px;
+            border-bottom: 1px solid #828691;
+            box-sizing: border-box;
+            border-bottom: 1px solid black;
+        }
+        #overLeft{
+            font-size: 1.3em;
             font-weight: bold;
         }
-        #fotter{
-            background-color: #292929;
-            box-sizing: border-box;
-            padding-top: 20px;
-        }
-        #fotter1{
-
-            margin-left: 430px;
-            width: 300px;
-        }
-        #fotter1 a{
-            font-size: 14px;
-            color: #fff;
-            font-weight: 600;
-            padding: 0;
-            margin: 0;
-        }
-        #fotterBox{
-            flex: 2;   
-        }
-        #fotter2{
-            width: fit-content;
-        }
-        #fotter2 li{
-            font-size: 14px;
-            color: #808080;
-            font-weight: 400;
-            padding-bottom: 10px;
-        }
-        #fotter3{
-            margin-right: 430px;
-            width: 360px;
-
-        }
-        .facebook{
-            font-size: 14px;
-            display: block;
-            overflow: hidden;
-            text-indent: -9999px;
-            width: 40px;
-            height: 40px;
-            background-position: 0 0;
-            background-image: url(https://www.mcdonalds.co.kr/kor/images/common/ico_sns.png);
-            background-repeat: no-repeat;
-        }
-        .insta{
-            font-size: 14px;
-            display: block;
-            overflow: hidden;
-            width: 40px;
-            height: 40px;
-            background-position: 0 -40px;
-            text-indent: -9999px;
-            background-image: url(https://www.mcdonalds.co.kr/kor/images/common/ico_sns.png);
-            background-repeat: no-repeat;
-        }
-        .youtube{
-            font-size: 14px;
-            display: block;
-            overflow: hidden;
-            width: 40px;
-            height: 40px;
-            background-position: 0 -80px;
-            text-indent: -9999px;
-            background-image: url(https://www.mcdonalds.co.kr/kor/images/common/ico_sns.png);
-            background-repeat: no-repeat;
-        }
-        .twitter{
-            font-size: 14px;
-            display: block;
-            overflow: hidden;
-            width: 40px;
-            height: 40px;
-            background-position: 0 -120px;
-            text-indent: -9999px;
-            background-image: url(https://www.mcdonalds.co.kr/kor/images/common/ico_sns.png);
-            background-repeat: no-repeat;
-        }
-        .fotterimg{
-            width: 100px;
-            height: 70px;
-
-        }#fotter3 > a{
-            padding-right: 20px;
-        }
-        aside{
-            width: 120px;
-            position: fixed;
-            right: 0;
-            top: 40%;
-            display: flex;
-            flex-flow: wrap;
-            justify-content: center
-        }
-        #aisde img{
-            padding-bottom: 20px;
-        }
-        #aisde > a:nth-child(3) > img{
-            padding-left: 30px;
-            scroll-behavior: smooth;
-        }
-        ol{
-            margin: 15px;
-           list-style: none;
-           padding-left: 0;
-           padding: 15px 10px 45px 10px;
-           color: #808080;
-        }
-        ol>li{
-            padding-bottom: 15px;
-            font-size: 0.9em;
-        }
-        ol:nth-child(2){
-            margin-left: 0;
-            margin-right: 30px;
-        }
-        ol:nth-child(3) > li{
-            margin-right: 50px;
+        #overRight{
+            font-size: 1.3em;
             
         }
-        .dropbox{
-            position: absolute;
-            width: 100%;
-            background-color: white;
-            height: 300px;
-            top: 140px;
+        #overRight span{
+            padding: 0 15px;
         }
-        .dropmenu{
-            width: fit-content;
-            list-style: none;
-            padding-left: 0;
-            margin: auto;
-            margin-left: 550px;
-        }
+       ol{
+        list-style: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.09) ;
+       }
+       #MainBox{
+        width: 1080px;
+        height: 3860px;
+        margin: auto;
+       }
+       #Mainleft{
+        width: 105px;
+        
+       }
+       h2{
+        width: 90px;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        text-align: left;
+        justify-content: center;
+        margin: 0;
+        
+        font-size: 1.6em;
+        font-weight: 700;
+        border-bottom: 1px solid black;
+       }
+       #Main{
+        width: 650px;
+        height: 3860px;
+        padding: 22px 26px 0 26px;
+        box-sizing: border-box;
+        border-left: 1px solid #828691;
+        border-right: 1px solid #828691;
+       }
+       #content{
+        width: 560px;
+       }
+       ol{
+        padding-left: 0;
+        list-style: none;
+        margin-bottom: 30px;
+        
+       }
+       ol>li{
+        padding: 0 1px;
+        padding-left: 0;
+        font-size: 13px;
+        font-weight: bold;
+        padding: 3px 0 10px 0;
+    }
+    .ad{
+        width: 70px;
+    }
+    #title{
+        font-size: 15px;
+        padding: 13px 0;
+        font-weight: bold;
+        border-bottom: 1px solid grey;
+    }
+    #content{
+        width: 100%;
+        margin: 0;
+        margin: 10px 0;
+    }
+    .itemRight{
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    
+    .line1{
+        font-size: 1.4em;
+        font-weight: bold;
+        padding-bottom: 7px;
+    }
+    .line2{
+        font-size: 1.2em;
+        color: #828691;
+        padding-bottom: 10px;
+    }
+    .line3{
+        font-size: 1.2em;
+    }
+    #Mainright{
+        width: 300px;
+        padding: 22px 0 0 26px;
+        box-sizing: border-box;
+    }
+    #infoTopLeft{
+        margin-bottom: 15px;
+    }
+    #infoTopLeft p:first-child{
+        font-size: 1.4em;
+        font-weight: bold;
+        padding: 0;
+        margin: 0;
+    }
+    #infoTopLeft p:nth-child(2){
+        font-size: 1.3em;
+        color: #828691;
+        padding: 0;
+        margin: 0;
+    }
+    #infoTopRight{
+        font-size: 1.3em;
+    }
+    #infoLeft p{
+        padding: 0;
+        margin: 0;
+        font-size: 1.3em;
+        padding-bottom: 5px;
+    }
+    #infoLeft{
+        margin: 6px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    }
+    .company{
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+    }
+    .rotate{
+        background-image: url('https://ssl.pstatic.net/static.news/image/news/2023/06/20/sp_news.png');
+        width: 5px;
+        height: 5px;
+        background-size: 681px 665px;
+        background-repeat: no-repeat;
+        background-position: -648px -238px;
+    }
+    .dog{
+        width: 28;
+        height: 28px;
+        border-radius: 50%;
+    }
+    #TopRight li{
+        padding-right: 10px;
+    }
+    .Bell{
+        background-image: url('https://ssl.pstatic.net/static/common/gnb/one/sp_gnb_v15.png?v=2006');
+        background-repeat: no-repeat;
+        display: block;
+        width: 17px;
+        height: 19px;
+        background-position: -220px -120px;
+    }
+    .letter{
+        background-image: url('https://ssl.pstatic.net/static/common/gnb/one/sp_gnb_v15.png?v=2006');
+        background-repeat: no-repeat;
+        display: block;
+        width: 22px;
+        height: 16px;
+        background-position: -238px -121px;
+    }
+    .dial{
+        background-image: url('https://ssl.pstatic.net/static/common/gnb/one/sp_gnb_v15.png?v=2006');
+        background-repeat: no-repeat;
+        display: block;
+        width: 18px;
+        height: 18px;
+        background-position: -261px -120px;
+    }
+    .dotbogi{
+        background-image: url('https://ssl.pstatic.net/static.news/image/news/2022/11/08/sp_retina.png');
+        background-repeat: no-repeat;
+        display: block;
+        width: 21px;
+        height: 21px;
+        background-position: -140px -24px;
+        background-size: 164px 115px;
+        
+    }
+    .info{
+        background-image: url('https://ssl.pstatic.net/static.news/image/news/2023/06/20/sp_news.png');
+        width: 15px;
+        height: 15px;
+        background-size: 681    px 665px;
+        background-repeat: no-repeat;
+        background-position: -57px -650px;
+        display: inline-block;
+        font-size: 0;
+        background-color: transparent;
+        border-radius: 50%;
+
+        
+    }
     </style>
 </head>
 <body>
-    <header class="flex">
-    <div id="menu" >
-        <ul class="flex">
-            <li><a href="" id="#Top" ><img src="https://www.mcdonalds.co.kr/kor/images/common/logo.png" alt=""></a></li>
-            <li><a href="#">Menu</a>
-            </li>
-            <li><a href="#">Store</a></li>
-            <li><a href="#">What's New</a></li>
-            <li><a href="#">Story</a></li>
-        </ul >
+    <header>
+        <div id="TopBox">
+        <div id="top">
+            <div id="BlueTop" class="sb frame">
+                <div id="TopLeft" class="flex">
+                    <h1>
+                        <a href="" class="TopLogo">
+                            <span class="blind">Naver</span>
+                        </a>
+                        
+                        <a href="" class="NewsName">
+                            
+                            <span class="blind">뉴스</span>
+                        </a>
+                    </h1>
+                    <ul>
+                        <li ><span class="bar">|</span class=""><a href="" class="TopMenuName">연예</a></li>
+                        <li ><span class="bar">|</span class=""><a href="" class="TopMenuName">스포츠</a></li>
+                        <li ><span class="bar">|</span class=""><a href="" class="TopMenuName">날씨</a></li>
+                        <li ><span class="bar">|</span class=""><a href="" class="TopMenuName">프리미엄</a></li>
+                    </ul>
+                </div>
+                <div id="TopRight" class="flex">
+                   <ul>
+                    <li><a href="" class="TopProfile"><img class="dog"src="https://phinf.pstatic.net/contact/20221208_179/1670460781241bhfBv_JPEG/0910_005518_M6CAN06K3O_2.jpg?type=s80" alt=""></a></li>
+                    <li><a href="">이선로🔻</a></li>
+                    <li><a href="" class="Bell"><span class="blind">벨모양</span></a></li>
+                    <li><a href="" class="letter"><span class="blind">편지지</span></a></li>
+                    <li><a href="" class="dial"><span class="blind">다이얼</span></a></li>
+                    <li><a href="" class="dotbogi"><span class="blind">돋보기</span></a></li>
+                   </ul>
+                </div>
+            </div>
+            <div id="Menubar" >
+                <div id="MenuBox" class="frame">
+                    
+                    <ul>
+                        <li>언론사별</li>
+                        <li>정치</li>
+                        <li>경제</li>
+                        <li>사회</li>
+                        <li>생활/문화</li>
+                        <li>IT/과학</li>
+                        <li>세계</li>
+                        <li>랭킹</li>
+                        <li>신문보기</li>
+                        <li>오피니언</li>
+                        <li>TV</li>
+                        <li>팩트체크</li>
+                        <li>알고리즘 안내</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
     </div>
-    <div id="function">
-        <ul class="flex">
-            <li><a href="#" class="Topbutton">임차문의</a></li>
-            <li><a href="#" class="Topbutton">RECRUIT</a></li>
-            <li><a href="#" class="Topbutton">ENG</a></li>
-            <li><button>🔍</button></li>
-        </ul>
+</header>
+<div id="void">내용없음</div>
+<main>
+    <div id="overMain" class="sb frame">
+            <div id="overLeft" >
+                07.26(수)
+            </div>
+            <div id="overRight">
+                <ul>
+                    <li>전체 언론사<span>|</span></li>
+                    <li>뉴스스탠드<span>|</span></li>
+                    <li>라이브러리</li>  
+                </ul>
+            </div>
     </div>
-    </header>
-    <div id="banner">
-        <img src="https://www.mcdonalds.co.kr/upload/main/banner/1680589329659.jpg" alt="">
-    </div>
-    <main class="frame">
-        <p><h2>McDonald's LIVE</h2></p>
-        <article>
-            <div class="item">
-                <div class="itemTop"><img src="https://www.mcdonalds.co.kr/upload/main/card/1688536163368.jpg" alt=""></div>
-                <div class="itembottom"><p>땅 끝자락 진도에서 찾은</p><p>한국의 맛</p></div>
+        <div id="MainBox" class="flex">
+            <div id="Mainleft">
+                <h2>
+                    <a href="">IT/과학</a>
+                </h2>
+                <ol>
+                    <li><a href="">모바일</a></a></li>
+                    <li><a href="">인터넷/SNS</a></li>
+                    <li><a href="">통신/뉴미디어</a></li>
+                    <li><a href="">IT 일반a></a></li>
+                    <li><a href="">보안/해킹</a></li>
+                    <li><a href="">컴퓨터</a></li>
+                    <li><a href="">게임/리뷰</a></li>
+                    <li><a href="">과학 일반</a></li>
+                </ol>
+                <div id="sideImg">
+                    <img class="ad" src="https://imgnews.pstatic.net/image/upload/item/2023/07/10/184436024_banner_left.png" alt="">
+                    <img class="ad" src="https://imgnews.pstatic.net/image/upload/item/2021/05/28/233112515_DA%2540PC%25B4%25BA%25BD%25BA%25C1%25C2%25C3%25F8.png" alt="">
+                </div>
             </div>
-            <div class="item">
-                <div class="itemTop"><img src="https://www.mcdonalds.co.kr/upload/main/card/1688536267129.jpg" alt=""></div>
-                <div class="itembottom"><p>100% 우리 곡물로 살린</p><p>고소한 한국의 맛</p></div>
+            <div id="Main">
+                <div id="title">헤드라인 뉴스<span><img class="info" src="https://ssl.pstatic.net/static.news/image/news/2023/06/20/sp_news.png" alt=""></span></div>
+                <div id="content">
+                    <div class="item flex" >
+                        <div class="itemLeft"><img src="https://imgnews.pstatic.net/image/origin/629/2023/07/26/229668.jpg?type=nf132_90" alt=""></div>
+                        <div class="itemRight">
+                            <div class="line1"><a href="">	한국서 펼쳐지는 '갤럭시 언팩'…BTS 슈가 등판 소식에 분위기 '후끈'</a></div>
+                            <div class="line2"><a href="">삼성전자, 최초 '한국 언팩'…'폴더블폰 종주국' 이미지 각인 갤럭시Z폴드5·플립5 등 신제품</a></div>
+                            <div class="line3"><a href="">더팩트 <span>|</span> 🟰</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content">
+                    <div class="item flex" >
+                        <div class="itemLeft"><img src="https://imgnews.pstatic.net/image/origin/031/2023/07/26/761642.jpg?type=nf132_90" alt=""></div>
+                        <div class="itemRight">
+                            <div class="line1"><a href="">K-콘텐츠 육성 위해 모태펀드·세액공제 개선 필수" [IT돋보기]</a></div>
+                            <div class="line2"><a href="">국내 콘텐츠 산업 활성화를 위해 현행 모태펀드 제도 개선과 세액공제 범위 확대 등 대</a></div>
+                            <div class="line3"><a href="">아이뉴스24 <span>|</span> 🟰</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content">
+                    <div class="item flex" >
+                        <div class="itemLeft"><img src="https://imgnews.pstatic.net/image/origin/003/2023/07/26/11997609.jpg?type=nf132_90" alt=""></div>
+                        <div class="itemRight">
+                            <div class="line1"><a href="">해킹당한 내 코인 지킨다…거래소 위탁토큰 '주석공시' 의무화</a></div>
+                            <div class="line2"><a href="">가상자산 거래소 해킹으로 탈취된 코인에 대한 보호 조치가 강화될 전망이다. 금융당국이 </a></div>
+                            <div class="line3"><a href="">뉴시스 <span>|</span> 🟰</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content">
+                    <div class="item flex" >
+                        <div class="itemLeft"><img src="https://imgnews.pstatic.net/image/origin/030/2023/07/26/3120824.jpg?type=nf132_90" alt=""></div>
+                        <div class="itemRight">
+                            <div class="line1"><a href="">	
+                                카카오 노조 집회...“고용안정 책임져라” 항의</a></div>
+                            <div class="line2"><a href="">민주노총 전국화학섬유식품산업노동조합 카카오 지회는 26일 집회를 열어 고용 불안 </a></div>
+                            <div class="line3"><a href="">전자신문  <span>|</span> 🟰</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content">
+                    <div class="item flex" >
+                        <div class="itemLeft"><img src="https://imgnews.pstatic.net/image/origin/030/2023/07/26/3120791.jpg?type=nf132_90" alt=""></div>
+                        <div class="itemRight">
+                            <div class="line1"><a href="">	
+                                SKT, AI 기반 '티플로'로 차량통행시간 13% 단축</a></div>
+                            <div class="line2"><a href="">SK텔레콤은 교통 신호 최적화 솔루션 '티플로'를 경기 화성시 상습 정체 교차로 15곳에 3</a></div>
+                            <div class="line3"><a href="">전자신문 <span>|</span> 🟰</a></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="item">
-                <div class="itemTop"><img src="https://www.mcdonalds.co.kr/upload/main/card/1689752728419.jpg" alt=""></div>
-                <div class="itembottom"><p>맥크리스피 버거 세트 먹고?</p><p>슈퍼팝 페스티벌 가자!</p></div>
+            <div id="Mainright">
+                <div id="infoTop" class="flex">
+                    <div id="infoTopLeft">
+                        <p><a href="">언론사별 가장 많이 본 뉴스<span><img class="info" src="https://ssl.pstatic.net/static.news/image/news/2023/06/20/sp_news.png" alt=""></span></a></p>
+                        <p><a href="">오후3시`4시까지 집계한 결과입니다.</a></p>
+                    </div>
+                    <div id="infoTopRight">더보기<a href="" class="rotate">
+                        <span class=" blind">이</span></a>
+                    </div>
+                </div>
+                <div id="infoBottom">
+
+                    <div class="infoItem flex">
+                        <div id="infoLeft">
+                            <p><a href="">'153만원→113만원' 한순간에 40만원 '뚝'…에코프로</a></p>
+                            <p><a href=""><span><img class="company"src="https://mimgnews.pstatic.net/image/upload/office_logo/421/2021/02/09/logo_421_56_20210209173713.jpg" alt=""></span>뉴스1</a></p>
+                        </div>
+                        <div id="infoRight"><img src="https://mimgnews.pstatic.net/image/origin/421/2023/07/26/6953081.jpg?type=nf88_60" alt=""></div>
+                    </div>
+                    <div class="infoItem flex">
+                        <div id="infoLeft">
+                            <p><a href="">'수해 골프' 홍준표 시장 당원권 정지 10개월(종합)</a></p>
+                            <p><a href=""><span ><img class="company"src="https://mimgnews.pstatic.net/image/upload/office_logo/055/2020/10/07/logo_055_56_20201007141807.jpg" alt=""></span>JTBC</a></p>
+                        </div>
+                        <div id="infoRight"><img src="https://mimgnews.pstatic.net/image/origin/437/2023/07/26/352877.jpg?type=nf88_60" alt=""></div>
+                    </div>
+                    <div class="infoItem flex">
+                        <div id="infoLeft">
+                            <p><a href="">소방관·간호사 부부, 휴가지서 물에 빠진 남성 구했다</a></p>
+                            <p><a href=""><span ><img class="company" src="https://mimgnews.pstatic.net/image/upload/office_logo/056/2021/10/28/logo_056_56_20211028103053.png" alt=""></span>국민일보</a></p>
+                        </div>
+                        <div id="infoRight"><img src="https://mimgnews.pstatic.net/image/origin/005/2023/07/26/1626417.jpg?type=nf88_60" alt=""></div>
+                    </div>
+                    <div class="infoItem flex">
+                        <div id="infoLeft">
+                            <p><a href="">신림 흉기난동범은 33세 조선…신상공개(종합)</a></p>
+                            <p><a href=""><span ><img class="company" src="https://mimgnews.pstatic.net/image/upload/office_logo/214/2020/06/30/logo_214_56_20200630111130.png" alt=""></span>연합뉴스</a></p>
+                        </div>
+                        <div id="infoRight"><img src="https://mimgnews.pstatic.net/image/origin/001/2023/07/26/14093529.jpg?type=nf88_60" alt=""></div>
+                    </div>
+                    <div class="infoItem flex">
+                        <div id="infoLeft">
+                            <p><a href="">'신림동 흉기난동' 신상공개…33세 조선</a></p>
+                            <p><a href=""><span ><img class="company" src="https://mimgnews.pstatic.net/image/upload/office_logo/020/2020/09/17/logo_020_56_20200917112548.jpg" alt=""></span>연합뉴스TV</a></p>
+                        </div>
+                        <div id="infoRight"><img src="https://mimgnews.pstatic.net/image/origin/422/2023/07/26/611057.jpg?type=nf88_60" alt=""></div>
+                        
+                    </div>
+                    <div><img src="Snipaste_2023-07-26_20-18-57.png" alt=""></div>
+                </div>
             </div>
-            <div class="item">
-                <div class="itemTop"><img src="https://www.mcdonalds.co.kr/upload/main/card/1686722914159.jpg" alt=""></div>
-                <div class="itembottom"><p>갓성비 간식 맛집, 맥도날드 해피 스낵!</p></div>
-            </div>
-            <div class="item">
-                <div class="itemTop"><img src="https://www.mcdonalds.co.kr/upload/main/card/1684299963307.jpg" alt=""></div>
-                <div class="itembottom"><p>여름의 맛!</p><p>겉바속쫄 맥윙!</p></div>
-            </div>
-            <div class="item">
-                <div class="itemTop"><img src="https://www.mcdonalds.co.kr/upload/main/card/1685434964328.jpg" alt=""></div>
-                <div class="itembottom"><p>달콤한 아이스크림과</p><p>진~한 라떼의 만남!</p></div>
-            </div>
-        </article>
-       
+        </div>
     </main>
-    <div id="fotter" class="flex">
-        <div id="fotterBox" class="flex frame">
-            <div id="fotter1" class="">
-                <ul>
-                    <li><a href="" style="color: yellow;">개인정보 처리방침</a></li>
-                    <li><a href="">위치정보 이용약관</a></li>
-                    <li><a href="">사이트맵</a></li>
-                    <li><a href="">임차문의</a></li>
-                    <li><a href="">고객문의</a></li>
-                    <li><a href="">인재채용</a></li>
-                </ul>
-            </div>
-            <div id="fotter2" class="">
-                <ul>
-                    <li>한국맥도날드(유)</li>
-                    <li>대표이사 : 김기원</li>
-                    <li>사업자등록번호:10-81-26409</li>
-                    <li>전화주문:1600-5252</li>
-                    <li>COPYRIGHT © 2019 ALL RIGHTS RESERVED BY McDonald's.</li>
-                </ul>
-            </div>
-        </div>
-        <div id="fotter3" class="flex">
-            <a href="" class="facebook">페이스북</a>
-            <a href="" class="insta">인스타</a>
-            <a href="" class="youtube">유튜브</a>
-            <a href="" class="twitter">트위터</a>
-            <a href=""><img class="fotterimg" src="https://www.mcdonalds.co.kr/kor/images/common/web_accessibility.png" alt=""></a>
-        </div>
-    </div>
-
-    <aside>
-        <div id="aisde">
-            <a href=""><img src="https://www.mcdonalds.co.kr/kor/images/common/btn_delivery_04.png" alt=""></a>
-            <a href=""><img src="https://www.mcdonalds.co.kr/kor/images/common/btn_story_04.png" alt=""></a>
-            <a href="#Top"><img src="https://www.mcdonalds.co.kr/kor/images/common/btn_top_04.png" alt=""></a>
-        </div>
-    </aside>
-    <div class="dropbox hidden">
-
-        <div class="dropmenu flex">
-            <ol>
-                <li>버거</li>
-                <li>맥런치</li>
-                <li>맥모닝</li>
-                <li>해피스낵</li>
-                <li>사이드&디저트</li>
-                <li>맥카페&음료</li>
-                <li>해피밀</li>
-            </ol>
-            <ol>
-                <li>매장찾기</li>
-                <li>맥딜리버리</li>
-                <li>맥드라이브</li>
-                <li>임차문의</li>
-            </ol>
-            <ol>
-                <li>프로모션</li>
-                <li>새로운 소식</li>
-                <li>이달의 해피밀</li>
-            </ol>
-            <ol>
-                <li>브랜드 소개</li>
-                <li>사회적 책임과 지원</li>
-                <li>맥도날드 품질 이야기</li>
-                <li>맥도날드 사람들</li>
-            </ol>
-        </div>
-        
-    </div>
-
-    <script>
-        const menubar = document.querySelector('#menu >ul > li:nth-child(2)')
-        const menubar2 = document.querySelector('#menu >ul > li:nth-child(3)')
-        const menubar3 = document.querySelector('#menu >ul > li:nth-child(4)')
-        const menubar4 = document.querySelector('#menu >ul > li:nth-child(5)')
-        const dropmenu = document.querySelector('.dropbox')
-
-
-        menubar.addEventListener('mouseover',(event)=>{
-            dropmenu.classList.remove('hidden')
-        })
-        menubar.addEventListener('mouseleave',(event)=>{
-            dropmenu.classList.add('hidden')
-        })
-        menubar2.addEventListener('mouseover',(event)=>{
-            dropmenu.classList.remove('hidden')
-        })
-        menubar2.addEventListener('mouseleave',(event)=>{
-            dropmenu.classList.add('hidden')
-        })
-        menubar3.addEventListener('mouseover',(event)=>{
-            dropmenu.classList.remove('hidden')
-        })
-        menubar3.addEventListener('mouseleave',(event)=>{
-            dropmenu.classList.add('hidden')
-        })
-        menubar4.addEventListener('mouseover',(event)=>{
-            dropmenu.classList.remove('hidden')
-        })
-        menubar4.addEventListener('mouseleave',(event)=>{
-            dropmenu.classList.add('hidden')
-        })
-        
-       
-
-        
-    </script>
+    
 </body>
 </html>
