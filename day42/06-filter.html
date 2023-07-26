@@ -11,17 +11,31 @@
                 margin: 10px;
             }
 
+            .flex {
+                display: flex;
+            }
+
+            th {
+                width: 100px;
+            }
+
             th,
             td {
+                text-align: center;
                 padding: 10px;
                 border: 1px solid black;
             }
 
             fieldset {
+                width: fit-content;
                 margin: 10px;
             }
 
             .hidden {
+                display: none;
+            }
+
+            .hidden2 {
                 display: none;
             }
         </style>
@@ -57,9 +71,9 @@
         <table>
             <thead>
                 <tr>
-                    <th>이름</th>
-                    <th>나이</th>
-                    <th>성별</th>
+                    <th order="1" class="name">이름<span></span></th>
+                    <th order="1" class="age">나이<span></span></th>
+                    <th order="1" class="gender">성별<span></span></th>
                 </tr>
             </thead>
             <tbody>
@@ -134,22 +148,97 @@
 
             console.log(genderFilters);
             function genderFilterHandler() {
-                const checkedGenderBoxes = genderFilters
+                const checkedGender = Array.from(genderFilters)
                     .filter((box) => box.checked)
                     .map((box) => box.value);
                 const trList = document.querySelectorAll("tbody > tr");
                 trList.forEach((tr) => {
                     const gender =
                         tr.querySelector("td:nth-child(3)").innerText;
-                    const tSize = checkedGenderBoxes
-                        .map((a) => a == a.value)
-                        .filter((b) => b).length;
-                    if (checkedGenderBoxes.length == 0) {
-                        tr.classList.remove("hidden");
-                    } else if (tSize != 0) tr.classList.remove("hidden");
-                    else tr.classList.add("hidden");
+                    if (checkedGender.length == 0) {
+                        tr.classList.remove("hidden2");
+                    } else if (checkedGender.includes(gender))
+                        tr.classList.remove("hidden2");
+                    else tr.classList.add("hidden2");
                 });
             }
+            genderFilters.forEach((box) => (box.onclick = genderFilterHandler));
+
+            function isNumeric(str) {
+                return !isNaN(str);
+            }
+
+            const thList = document.querySelectorAll("th");
+
+            function sortHandler(event) {
+                const className = event.target.className;
+                const order = +event.target.getAttribute("order");
+
+                document
+                    .querySelectorAll("thead  span")
+                    .forEach((span) => (span.innerText = ""));
+
+                const span = event.target.querySelector("span");
+                span.innerText = order > 0 ? " △" : " ▽";
+
+                const trArray = Array.from(
+                    document.querySelectorAll("tbody > tr")
+                );
+                trArray.sort((a, b) => {
+                    let valueA = a.querySelector("." + className).innerText;
+                    let valueB = b.querySelector("." + className).innerText;
+                    // if (className != "name") {
+
+                    if (isNumeric(valueA) && isNumeric(valueB)) {
+                        valueA = +valueA;
+                        valueB = +valueB;
+                    }
+                    let result = valueA > valueB ? 1 : -1;
+                    event.target.setAttribute("order", order * -1);
+                    return result * order;
+                });
+
+                trArray.forEach((tr) => {
+                    tbody.appendChild(tr);
+                });
+            }
+            thList.forEach((th) => (th.onclick = sortHandler));
+
+            // 이벤트 대상 : HTML 문서 요소     th
+            // 이벤트 리스너 : 특정 이벤트 종류 감지 : click
+            // 이벤트 핸들러 : 이벤트 발생 시 수행하는 함수 : sortHandler
+
+            const thArray = Array.from(
+                document.querySelectorAll("thead > tr >  th")
+            );
+
+            function sortHandler2(event) {
+                const order = +event.target.getAttribute("order");
+                event.target.setAttribute("order", -order);
+                const index = thArray.indexOf(event.target);
+
+                const tbody = document.querySelector("tbody");
+                const trArray = Array.from(
+                    document.querySelectorAll("tbody > tr")
+                );
+
+                trArray.sort((a, b) => {
+                    let valueA = a.querySelector(
+                        `td:nth-child(${index + 1})`
+                    ).innerText;
+                    let valueB = b.querySelector(
+                        `td:nth-child(${index + 1})`
+                    ).innerText;
+                    if (isNaN(valueA) == false) {
+                        valueA = +valueA;
+                        valueB = +valueB;
+                    }
+                    const result = valueA > valueB ? 1 : -1;
+                    return result * order;
+                });
+                trArray.forEach((tr) => tbody.appendChild(tr));
+            }
+            thArray.forEach((th) => (th.onclick = sortHandler2));
         </script>
     </body>
 </html>
