@@ -8,4 +8,6 @@ img {
     bottom:0px;
     z-index: -1;
     opacity:60%;
+    text-align: center;
+    background-repeat: no-repeat;
     }
