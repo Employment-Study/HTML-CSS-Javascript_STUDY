@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mini |</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            main {
+                width: 1300px;
+                border: 1px solid black;
+                margin: 0 auto;
+            }
+
+            ul {
+                display: flex;
+                list-style: none;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            .flex {
+                display: flex;
+            }
+            .container {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            #prodImg {
+                width: 535px;
+                margin-right: 20px;
+            }
+
+            #prodImg > img {
+                width: 100%;
+                border-radius: 10px;
+                height: auto;
+            }
+
+            #prodInfo {
+                width: 740px;
+            }
+
+            #prodInfo > div {
+                padding-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            #prodCompany {
+                color: blue;
+            }
+
+            .rating-star {
+                background-position-y: 0.5px;
+                width: 75px;
+                height: 14px;
+                content: "";
+                display: block;
+                background-size: 15px;
+                background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyMSIgdmlld0JveD0iMCAwIDIzIDIxIj4KICAgIDxwYXRoIGZpbGw9IiNGRjk2MDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTExLjg0My40OTZMMTUgNi4zNjhsNi42OTQgMS4xMTljLjc1NC4xMjUuOTMyLjY2LjM5OCAxLjE5N2wtNC43NDQgNC43NDguOTgxIDYuNTYyYy4xMS43NC0uMzU3IDEuMDcyLTEuMDQyLjc0bC02LjA4Ny0yLjk0LTYuMDg3IDIuOTRjLS42ODUuMzMyLTEuMTUyIDAtMS4wNDItLjc0bC45OC02LjU2MkwuMzA4IDguNjg0Yy0uNTM0LS41MzYtLjM1Ni0xLjA3Mi4zOTgtMS4xOTdMNy40IDYuMzY4IDEwLjU1Ny40OTZjLjM1NS0uNjYxLjkzMS0uNjYxIDEuMjg2IDAiLz4KPC9zdmc+Cg==");
+            }
+
+            #prodRank {
+                font-size: 13px;
+                display: flex;
+                color: blue;
+                margin-bottom: 10px;
+            }
+
+            #prodCategory {
+                border-top: 1px solid #eee;
+                padding-top: 10px;
+            }
+
+            #prodPrice h3 {
+                color: crimson;
+            }
+
+            #prodPrice > div {
+                margin: 5px 0;
+            }
+
+            .circle {
+                font-size: 14px;
+                display: inline-block;
+                box-sizing: content-box;
+                border: 1px solid #eee;
+                border-radius: 10px;
+                padding: 5px 10px;
+            }
+
+            .circle > img {
+                display: inline-block;
+                width: 14px;
+                margin-top: 2px;
+                vertical-align: top;
+            }
+
+            #prodShipping {
+                padding-top: 10px;
+                border-top: 1px solid grey;
+                font-size: 16px;
+            }
+
+            #prodShipping > label > input {
+                margin: 10px 10px;
+            }
+
+            #prodOption {
+                border-top: 1px solid #eee;
+                padding-top: 10px;
+            }
+
+            #prodOption > select {
+                font-weight: normal;
+                width: 100px;
+                padding: 5px 10px;
+            }
+
+            #prodsize > option {
+                font-weight: normal;
+                font-size: 16px;
+            }
+
+            #prodcolor > option {
+                font-weight: normal;
+                font-size: 16px;
+            }
+
+            #payment {
+                border-top: 1px solid #eee;
+                padding-top: 30px;
+                height: 60px;
+                justify-content: space-around;
+            }
+
+            #payment > input[type="number"] {
+                width: 80px;
+                height: 60px;
+                outline: none;
+                font-size: 24px;
+            }
+
+            #payment > a > button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 250px;
+                height: 60px;
+                padding: 20px 10px;
+                font-weight: 700;
+                font-size: 20px;
+                outline: none;
+                cursor: pointer;
+            }
+
+            .bgblue {
+                background-color: #4167f1;
+                color: white;
+                border: none;
+            }
+
+            .bgwhite {
+                background-color: white;
+                color: #4167f1;
+                border: 1px solid grey;
+            }
+
+            #prodDetails {
+                width: 998px;
+                margin: 0 auto;
+                margin-top: 20px;
+                border-top: 2px solid black;
+            }
+
+            .detail {
+                justify-content: space-between;
+            }
+
+            .detail li {
+                font-weight: 700;
+                border: 1px solid black;
+                width: 300px;
+                text-align: center;
+                padding: 30px 15px;
+            }
+
+            .detail li:active {
+                border-bottom: none;
+            }
+
+            #prodExplain {
+                width: 100%;
+            }
+
+            #prodExplain > img {
+                width: 100%;
+                height: auto;
+            }
+
+            #prodExplain > table {
+                width: 100%;
+                margin: 0 auto;
+                margin-top: 30px;
+                border-collapse: collapse;
+            }
+
+            table {
+                border-collapse: collapse;
+            }
+
+            th,
+            td {
+                padding: 10px;
+                border: 1px solid grey;
+            }
+            th {
+                background-color: #f1f1f1;
+            }
+
+            td {
+                width: 500px;
+            }
+
+            div {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            #Reviewform {
+                width: 1300px;
+                margin: auto;
+            }
+            a {
+                all: unset;
+            }
+            #review-nav > #review-ul {
+                display: flex;
+                list-style: none;
+                padding-left: 0;
+                margin: 0;
+                padding: 0;
+            }
+            #review-nav > #review-ul > li {
+                flex: 1;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                font-size: 14px;
+                color: #777777;
+                border-bottom: 1px solid #dddddd;
+                margin-bottom: -1px;
+            }
+            nav > ul > li:hover {
+                border-bottom: 2px solid black;
+                margin-bottom: -2px;
+            }
+            .flex {
+                display: flex;
+            }
+            .review {
+                width: 1000px;
+                margin: auto;
+                margin-bottom: -1px;
+                border: 1px solid #dddddd;
+                padding-bottom: 15px;
+            }
+            .review-title {
+                margin: 15px;
+                /* border: 1px dashed pink; */
+            }
+            .review-content {
+                margin: 10px 50px;
+                /* border: 1px dashed pink; */
+            }
+            .review-reply {
+                margin: 10px 50px;
+                /* border: 1px dashed pink; */
+            }
+            .comment-img {
+                height: 42px;
+            }
+            .comment-img > img {
+                margin-top: 5px;
+                width: 32px;
+                border-radius: 100%;
+            }
+            .comment-text {
+                flex: 9;
+            }
+            .text-title {
+                font-size: 14px;
+                font-weight: bold;
+                margin-left: 5px;
+            }
+            .text-detail > div {
+                color: #aaaaaa;
+                margin: 5px;
+                padding-right: 7px;
+                border-right: 1px solid #aaaaaa;
+            }
+            .text-detail > div:last-child {
+                border: none;
+            }
+            .comment-like {
+                flex: 0.5;
+                line-height: 42px;
+            }
+            .review-content {
+                padding: 15px 0;
+                font-size: 15px;
+                color: #000000;
+            }
+            .review-content > .content-img > img {
+                width: 144px;
+                margin-bottom: 10px;
+            }
+            .reply {
+                border: 1px solid #dddddd;
+                background-color: #f3f3f3;
+                padding: 10px 15px;
+                margin-bottom: -1px;
+            }
+            .review-reply > .reply input {
+                all: unset;
+                box-sizing: border-box;
+                height: 34px;
+                padding: 5px 10px;
+                border: 1px solid #dddddd;
+                background-color: white;
+                color: #b2b2b2;
+            }
+            .review-reply > .reply input:first-child {
+                width: 785px;
+                margin-right: 5px;
+            }
+            .reply-comment {
+                padding: 15px 10px;
+                border: 1px solid #dddddd;
+            }
+            .reply-img {
+                height: 79px;
+                margin-right: 8px;
+            }
+            .reply-img > img {
+                width: 79px;
+                border-radius: 100%;
+            }
+            .reply-detail > div {
+                color: #666666;
+                margin: 10px 7px 10px 0;
+                padding-right: 7px;
+                border-right: 1px solid #aaaaaa;
+            }
+            .reply-detail > div:last-child {
+                border: none;
+            }
+
+            .hidden {
+                display: none;
+            }
+
+            #question {
+                width: 100%;
+                margin: 20px auto;
+            }
+
+            #question > table {
+                width: 1000px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            #question > table {
+                border-collapse: collapse;
+            }
+
+            #question th,
+            td {
+                font-weight: 700;
+                padding: 10px;
+                border: 1px solid grey;
+            }
+
+            #question th {
+                background-color: #4167f1;
+                color: white;
+            }
+
+            #question td {
+                width: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <div id="prodImg">
+                    <img
+                        src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/9909210d-48ba-459e-96f4-faab32a41ce7/%EC%97%90%EC%96%B4-%EC%A1%B0%EB%8D%98-1-%EB%A1%9C%EC%9A%B0-%EC%97%AC%EC%84%B1-%EC%8B%A0%EB%B0%9C-FBbeey7u.png"
+                    />
+                </div>
+                <div id="prodInfo">
+                    <div id="prodCompany">나이키</div>
+                    <div id="prodName"><h3>에어 조던 1 로우</h3></div>
+                    <div id="prodRank">
+                        <span class="rating-star"></span>19개 상품평
+                    </div>
+                    <div id="prodCategory">여성 신발</div>
+                    <div id="prodPrice">
+                        <div>20%, <del>139,000원</del></div>
+                        <div><h3>111,200원</h3></div>
+                        <div class="circle">
+                            <img
+                                src="https://image6.coupangcdn.com/image/badges/cashback/web/list-cash-icon@2x.png"
+                            />
+                            최대 11,120원 적립
+                        </div>
+                    </div>
+                    <div id="prodShipping">
+                        <h4>무료배송</h4>
+                        <label
+                            ><input
+                                type="radio"
+                                name="ship"
+                                checked
+                            />　내일(화) 8/15 도착 보장 (9시간 38분 내 주문 시 /
+                            서울⋅경기 기준)</label
+                        ><br />
+                        <label
+                            ><input type="radio" name="ship" />　내일(화) 8/15
+                            새벽 7시 전 도착 보장 (오후 8시 50분 전 주문 시 /
+                            서울⋅경기 기준)</label
+                        >
+                    </div>
+                    <div id="prodOption">
+                        <h3>사이즈(mm)</h3>
+                        <select name="size" id="prodsize">
+                            <option value="275"><span>265</span></option>
+                            <option value="275"><span>260</span></option>
+                            <option value="275"><span>255</span></option>
+                            <option value="275"><span>250</span></option>
+                            <option value="275"><span>245</span></option>
+                        </select>
+                        <h3>컬러</h3>
+                        <select name="color" id="prodcolor">
+                            <option value="white"><span>white</span></option>
+                            <option value="dark"><span>dark</span></option>
+                            <option value="grey"><span>grey</span></option>
+                            <option value="pink"><span>pink</span></option>
+                            <option value="ivory"><span>ivory</span></option>
+                        </select>
+
+                        <div class="flex">
+                            <h4>사이즈 :</h4>
+                            <span> 265</span>
+                        </div>
+                        <div class="flex">
+                            <h4>컬러 :</h4>
+                            <span> white</span>
+                        </div>
+                    </div>
+                    <div id="payment" class="flex">
+                        <input
+                            type="number"
+                            value="1"
+                            class="productnum"
+                            maxlength="6"
+                            autocomplete="off"
+                        />
+                        <a href="#"><button class="bgblue">결제하기</button></a>
+                        <a href="#"
+                            ><button class="bgwhite">장바구니에 담기</button></a
+                        >
+                    </div>
+                </div>
+                <div id="prodDetails">
+                    <ul class="detail" class="flex">
+                        <a id="detailmenu1" href="#"><li>상세정보</li></a>
+                        <a id="detailmenu2" href="#"><li>리뷰(100)</li></a>
+                        <a id="detailmenu3" href="#"><li>문의하기</li></a>
+                    </ul>
+                </div>
+            </div>
+            <!-- 제품 상세 설명 -->
+            <div id="prodExplain">
+                <table>
+                    <tr>
+                        <th>
+                            제품의 주소재(운동화인 경우에는 겉감,안감을 구분하여
+                            표시)
+                        </th>
+                        <td>상품 상세페이지 참조</td>
+                        <th>색상</th>
+                        <td>상품 상세페이지 참조</td>
+                    </tr>
+                    <tr>
+                        <th>치수</th>
+                        <td>상품 상세페이지 참조</td>
+                        <th>제조자(수입자)</th>
+                        <td>상품 상세페이지 참조</td>
+                    </tr>
+                    <tr>
+                        <th>제조국</th>
+                        <td>상품 상세페이지 참조</td>
+                        <th>취급시 주의사항</th>
+                        <td>상품 상세페이지 참조</td>
+                    </tr>
+                </table>
+                <img
+                    src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/9909210d-48ba-459e-96f4-faab32a41ce7/%EC%97%90%EC%96%B4-%EC%A1%B0%EB%8D%98-1-%EB%A1%9C%EC%9A%B0-%EC%97%AC%EC%84%B1-%EC%8B%A0%EB%B0%9C-FBbeey7u.png"
+                />
+                <img
+                    src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e6c4e7fb-8221-405d-bb21-d7b07504269a/%EC%97%90%EC%96%B4-%EC%A1%B0%EB%8D%98-1-%EB%A1%9C%EC%9A%B0-%EC%97%AC%EC%84%B1-%EC%8B%A0%EB%B0%9C-FBbeey7u.png"
+                />
+            </div>
+            <div id="Reviewform" class="hidden">
+                <div class="review">
+                    <div class="review-title flex">
+                        <div class="comment-img">
+                            <img
+                                src="https://d3ha2047wt6x28.cloudfront.net/Hy-JwVDyTJo/pr:MEMBER_PROFILE/czM6Ly9pbWcuYS1ibHkuY29tL21lbWJlci9wcm9maWxlL2ltYWdlcy9kZWZhdWx0X3Byb2ZpbGVfaW1hZ2VfaW5fcmV2aWV3LnBuZw"
+                            />
+                        </div>
+                        <div class="comment-text">
+                            <div class="text-title">만족해요</div>
+                            <div class="text-detail flex">
+                                <div class="text-writer">김**</div>
+                                <div class="text-date">2023.05.26</div>
+                                <div class="text-views">👁️‍🗨️5</div>
+                            </div>
+                        </div>
+                        <div class="comment-like">👍105</div>
+                    </div>
+                    <div class="review-content">
+                        <div class="content-img">
+                            <img
+                                src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/9909210d-48ba-459e-96f4-faab32a41ce7/%EC%97%90%EC%96%B4-%EC%A1%B0%EB%8D%98-1-%EB%A1%9C%EC%9A%B0-%EC%97%AC%EC%84%B1-%EC%8B%A0%EB%B0%9C-FBbeey7u.png"
+                                alt=""
+                            />
+                        </div>
+                        <div class="content-text">
+                            상품오배송이 있었지만, 신속히 처리된 덕분에 빠른시일
+                            내 상품 수령함!!<br />
+                            색감도좋고 핏도좋고 두께감도 좋고 빠지는게 없음!!
+                        </div>
+                    </div>
+                    <div class="review-reply">
+                        <div class="reply flex">
+                            <form method="post">
+                                <input type="text" name="reply" />
+                                <input type="submit" value="댓글작성" />
+                            </form>
+                        </div>
+                        <div class="reply-comment flex">
+                            <div class="reply-img">
+                                <img
+                                    src="https://d3ha2047wt6x28.cloudfront.net/Hy-JwVDyTJo/pr:MEMBER_PROFILE/czM6Ly9pbWcuYS1ibHkuY29tL21lbWJlci9wcm9maWxlL2ltYWdlcy9kZWZhdWx0X3Byb2ZpbGVfaW1hZ2VfaW5fcmV2aWV3LnBuZw"
+                                />
+                            </div>
+                            <div>
+                                <div class="reply-text">
+                                    혹시 바지 어디껀가요?
+                                </div>
+                                <div class="reply-detail flex">
+                                    <div class="reply-writer">김지훈입니다</div>
+                                    <div class="reply-date">2022.09.14</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review">
+                    <div class="review-title flex">
+                        <div class="comment-img">
+                            <img
+                                src="https://d3ha2047wt6x28.cloudfront.net/Hy-JwVDyTJo/pr:MEMBER_PROFILE/czM6Ly9pbWcuYS1ibHkuY29tL21lbWJlci9wcm9maWxlL2ltYWdlcy9kZWZhdWx0X3Byb2ZpbGVfaW1hZ2VfaW5fcmV2aWV3LnBuZw"
+                            />
+                        </div>
+                        <div class="comment-text">
+                            <div class="text-title">만족해요</div>
+                            <div class="text-detail flex">
+                                <div class="text-writer">김**</div>
+                                <div class="text-date">2023.05.26</div>
+                                <div class="text-views">👁️‍🗨️5</div>
+                            </div>
+                        </div>
+                        <div class="comment-like">👍105</div>
+                    </div>
+                    <div class="review-content">
+                        <div class="content-img">
+                            <img
+                                src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/9909210d-48ba-459e-96f4-faab32a41ce7/%EC%97%90%EC%96%B4-%EC%A1%B0%EB%8D%98-1-%EB%A1%9C%EC%9A%B0-%EC%97%AC%EC%84%B1-%EC%8B%A0%EB%B0%9C-FBbeey7u.png"
+                                alt=""
+                            />
+                        </div>
+                        <div class="content-text">
+                            상품오배송이 있었지만, 신속히 처리된 덕분에 빠른시일
+                            내 상품 수령함!!<br />
+                            색감도좋고 핏도좋고 두께감도 좋고 빠지는게 없음!!
+                        </div>
+                    </div>
+                    <div class="review-reply">
+                        <div class="reply flex">
+                            <form method="post">
+                                <input type="text" name="reply" />
+                                <input type="submit" value="댓글작성" />
+                            </form>
+                        </div>
+                        <div class="reply-comment flex">
+                            <div class="reply-img">
+                                <img
+                                    src="https://d3ha2047wt6x28.cloudfront.net/Hy-JwVDyTJo/pr:MEMBER_PROFILE/czM6Ly9pbWcuYS1ibHkuY29tL21lbWJlci9wcm9maWxlL2ltYWdlcy9kZWZhdWx0X3Byb2ZpbGVfaW1hZ2VfaW5fcmV2aWV3LnBuZw"
+                                />
+                            </div>
+                            <div>
+                                <div class="reply-text">
+                                    혹시 바지 어디껀가요?
+                                </div>
+                                <div class="reply-detail flex">
+                                    <div class="reply-writer">김지훈입니다</div>
+                                    <div class="reply-date">2022.09.14</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review">
+                    <div class="review-title flex">
+                        <div class="comment-img">
+                            <img
+                                src="https://d3ha2047wt6x28.cloudfront.net/Hy-JwVDyTJo/pr:MEMBER_PROFILE/czM6Ly9pbWcuYS1ibHkuY29tL21lbWJlci9wcm9maWxlL2ltYWdlcy9kZWZhdWx0X3Byb2ZpbGVfaW1hZ2VfaW5fcmV2aWV3LnBuZw"
+                            />
+                        </div>
+                        <div class="comment-text">
+                            <div class="text-title">만족해요</div>
+                            <div class="text-detail flex">
+                                <div class="text-writer">김**</div>
+                                <div class="text-date">2023.05.26</div>
+                                <div class="text-views">👁️‍🗨️5</div>
+                            </div>
+                        </div>
+                        <div class="comment-like">👍105</div>
+                    </div>
+                    <div class="review-content">
+                        <div class="content-img">
+                            <img
+                                src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/9909210d-48ba-459e-96f4-faab32a41ce7/%EC%97%90%EC%96%B4-%EC%A1%B0%EB%8D%98-1-%EB%A1%9C%EC%9A%B0-%EC%97%AC%EC%84%B1-%EC%8B%A0%EB%B0%9C-FBbeey7u.png"
+                                alt=""
+                            />
+                        </div>
+                        <div class="content-text">
+                            상품오배송이 있었지만, 신속히 처리된 덕분에 빠른시일
+                            내 상품 수령함!!<br />
+                            색감도좋고 핏도좋고 두께감도 좋고 빠지는게 없음!!
+                        </div>
+                    </div>
+                    <div class="review-reply">
+                        <div class="reply flex">
+                            <form method="post">
+                                <input type="text" name="reply" />
+                                <input type="submit" value="댓글작성" />
+                            </form>
+                        </div>
+                        <div class="reply-comment flex">
+                            <div class="reply-img">
+                                <img
+                                    src="https://d3ha2047wt6x28.cloudfront.net/Hy-JwVDyTJo/pr:MEMBER_PROFILE/czM6Ly9pbWcuYS1ibHkuY29tL21lbWJlci9wcm9maWxlL2ltYWdlcy9kZWZhdWx0X3Byb2ZpbGVfaW1hZ2VfaW5fcmV2aWV3LnBuZw"
+                                />
+                            </div>
+                            <div>
+                                <div class="reply-text">
+                                    혹시 바지 어디껀가요?
+                                </div>
+                                <div class="reply-detail flex">
+                                    <div class="reply-writer">김지훈입니다</div>
+                                    <div class="reply-date">2022.09.14</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="question">
+                <table>
+                    <tr>
+                        <th>작성자</th>
+                        <th>내용</th>
+                        <th>작성일</th>
+                    </tr>
+                    <tr>
+                        <td>김**</td>
+                        <td>아니 월요일날 시켰는데 언제 오나요??</td>
+                        <td>2023-08-12</td>
+                    </tr>
+                    <tr>
+                        <td>박**</td>
+                        <td>배송문의</td>
+                        <td>2023-08-12</td>
+                    </tr>
+                    <tr>
+                        <td>윤**</td>
+                        <td>
+                            택배 박스가 찢어지고 제품에 흠집이 많은 상태로
+                            왔네요....
+                        </td>
+                        <td>2023-08-11</td>
+                    </tr>
+                </table>
+                <br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br />
+            </div>
+        </main>
+        <script>
+            const open1 = () => {
+                document
+                    .getElementById("prodExplain")
+                    .classList.remove("hidden");
+                document.getElementById("Reviewform").classList.add("hidden");
+                document.getElementById("question").classList.add("hidden");
+            };
+
+            const open2 = () => {
+                document
+                    .getElementById("Reviewform")
+                    .classList.remove("hidden");
+                document.getElementById("prodExplain").classList.add("hidden");
+                document.getElementById("question").classList.add("hidden");
+            };
+
+            const open3 = () => {
+                document.getElementById("question").classList.remove("hidden");
+                document.getElementById("prodExplain").classList.add("hidden");
+                document.getElementById("Reviewform").classList.add("hidden");
+            };
+
+            document
+                .getElementById("detailmenu1")
+                .addEventListener("click", open1);
+            document
+                .getElementById("detailmenu2")
+                .addEventListener("click", open2);
+
+            document
+                .getElementById("detailmenu3")
+                .addEventListener("click", open3);
+        </script>
+    </body>
+</html>
