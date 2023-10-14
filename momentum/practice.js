@@ -321,3 +321,55 @@ console.log(document.title);
 
 // 페이지의 제목을 바꾸는 것도 가능하다;.
 document.title = "HI";
+
+// -----------------------------------------------------------------------------------
+
+// 3.1
+const title = document.getElementById("title");
+
+title.innerText = "Got You";
+console.log(title.id);
+console.log(title.className);
+console.log(title.classList);
+
+//3.2,3.3,3.4
+// 클래스 이름으로 가져오거나
+
+const title = document.querySelector(".hello:first-child h1");
+
+// element의 내부를 보고 싶으면 dir
+console.dir(title);
+
+// 내부의 속성중 style부분의 color변경하기
+title.style.color = "blue";
+
+// 클릭시 이벤트
+function handleTitleClick() {
+    console.log("title was Clicked!");
+    if (title.style.color == "blue") {
+        title.style.color = "red";
+    } else {
+        title.style.color = "blue";
+    }
+}
+
+function handleMouseEnter() {
+    title.innerText = "Mouse is Here";
+}
+
+function handleMouseLeave() {
+    title.innerText = "Mouse is gone!";
+}
+
+function handleWindowResize() {
+    document.body.style.backgroundColor = "tomato";
+}
+
+// 이벤트를 listen하는 방법
+//  괄호를 넣지 않아야한다. click할 경우 자바스크립트가 대신 눌러주기 떄문이다.
+
+title.onclick = handleTitleClick;
+title.addEventListener("mouseenter", handleMouseEnter);
+title.addEventListener("mouseleave", handleMouseLeave);
+
+window.addEventListener("resize", handleWindowResize);
