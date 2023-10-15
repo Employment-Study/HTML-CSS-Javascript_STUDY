@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <body>
+        <div id="root"></div>
+    </body>
+    <!-- React는 UI 컴포넌트 형태로 구성하는 라이브러리일 뿐이며, 웹 또는 브라우저를 위한 라이브러리는 아니다. -->
+    <!--React는 state와 context를 관리하며, 이들의 변경 사항을 파악하고 변경 사항 snapshot을 React-DOM에 전달합니다.-->
+    <!--interactive한 힘을 가지고 있는 것이 react js(ex. 이벤트리스너)-->
+
+    <!--React-DOM은 브라우저의 DOM에서 React를 사용하기 위한 라이브러리이다.-->
+    <!--react Element를 HTML에서 쓰기 위함이다.-->
+    <!-- 따라서 React-DOM은 React로 부터 받은 변경사항이나 snapshot과 실제 브라우저 DOM을 비교하며 차이점을 확인한 후 실제 DOM을 조작한다. -->
+    <!-- 실질적인 브라우저 DOM의 조작은 React-DOM이 하게 되며 리액트 컴포넌트의 이전 state와 현재 state를 비교한뒤 차이점이 있을 때 Update한다. -->
+    <script
+        crossorigin
+        src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"
+    ></script>
+    <script
+        crossorigin
+        src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"
+    ></script>
+    <script>
+        const root = document.getElementById("root");
+        const h3 = React.createElement(
+            "h3",
+            {
+                id: "title",
+                onMouseEnter: () => console.log("mouse enter"),
+            },
+            "Hello I'm a span"
+        ); // 두번째  args는 태그속성, 세번째 args는 content이다.
+        const btn = React.createElement(
+            "button",
+            {
+                onClick: () => console.log("i'm clicked"),
+                style: {
+                    backgroundColor: "tomato",
+                },
+            },
+            "Click me"
+        );
+        const container = React.createElement("div", null, [h3, btn]); // 두 개의 component를 가지는 component
+        ReactDOM.render(container, root);
+    </script>
+</html>
